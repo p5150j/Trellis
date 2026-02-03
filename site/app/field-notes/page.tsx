@@ -1,14 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/mdx";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
   title: "Field Notes",
@@ -20,48 +12,62 @@ export default function FieldNotesPage() {
   const posts = getAllPosts("field-notes");
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="mx-auto max-w-3xl">
-        <h1 className="text-4xl font-bold">Field Notes</h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Observations, insights, and learnings from our work in the field.
-          These notes capture our experiences and reflections as we partner with
-          communities.
-        </p>
-
-        <Separator className="my-8" />
-
-        {posts.length === 0 ? (
-          <p className="text-muted-foreground">
-            No field notes yet. Check back soon!
+    <div className="flex flex-col">
+      {/* Header */}
+      <section className="section border-b border-border/40">
+        <div className="container-wide">
+          <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">
+            Insights
           </p>
-        ) : (
-          <div className="space-y-6">
-            {posts.map((post) => (
-              <Link key={post.slug} href={`/field-notes/${post.slug}`}>
-                <Card className="transition-colors hover:bg-muted/50">
-                  <CardHeader>
-                    <CardTitle>{post.title}</CardTitle>
-                    <CardDescription>
-                      {new Date(post.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                      {post.author && ` · ${post.author}`}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
+          <h1>Field Notes</h1>
+          <p className="mt-4 text-sm text-muted-foreground max-w-xl">
+            Observations, insights, and learnings from our work in the field.
+            These notes capture our experiences as we partner with communities.
+          </p>
+        </div>
+      </section>
+
+      {/* Posts Grid */}
+      <section className="section">
+        <div className="container-wide">
+          {posts.length === 0 ? (
+            <p className="text-sm text-muted-foreground">
+              No field notes yet. Check back soon.
+            </p>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post, i) => (
+                <Link
+                  key={post.slug}
+                  href={`/field-notes/${post.slug}`}
+                  className="group block border-r border-b border-border/40 last:border-r-0 md:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0"
+                >
+                  <article className="p-6 h-full min-h-[280px] flex flex-col bg-background hover:bg-muted/30 transition-colors">
+                    <span className="text-xs text-muted-foreground mb-4">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-base font-medium group-hover:text-primary transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-muted-foreground line-clamp-3">
                       {post.description}
                     </p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
+                    <div className="mt-auto pt-6">
+                      <span className="text-xs text-muted-foreground">
+                        {new Date(post.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,35 +1,38 @@
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
 
 const footerLinks = [
   { name: "About", href: "/about" },
   { name: "Field Notes", href: "/field-notes" },
   { name: "Research", href: "/research" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div>
-            <Link href="/" className="text-xl font-bold">
+    <footer className="border-t border-border/40 bg-background">
+      <div className="container-wide py-16">
+        <div className="grid gap-12 md:grid-cols-3">
+          {/* Brand */}
+          <div className="space-y-4">
+            <Link href="/" className="text-xl font-semibold tracking-tight">
               Trellis
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Supporting communities through research-driven insights and
               collaborative solutions.
             </p>
           </div>
+
+          {/* Navigation */}
           <div>
-            <h3 className="font-semibold">Navigation</h3>
-            <ul className="mt-4 space-y-2">
+            <h3 className="text-sm font-medium text-foreground mb-4">
+              Navigation
+            </h3>
+            <ul className="space-y-3">
               {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -37,16 +40,26 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Connect */}
           <div>
-            <h3 className="font-semibold">Connect</h3>
-            <p className="mt-4 text-sm text-muted-foreground">
+            <h3 className="text-sm font-medium text-foreground mb-4">
+              Connect
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Get in touch to learn more about our work and how we can
               collaborate.
             </p>
+            <a
+              href="mailto:hello@trellis.org"
+              className="inline-block mt-4 text-sm text-primary hover:underline"
+            >
+              hello@trellis.org
+            </a>
           </div>
         </div>
-        <Separator className="my-8" />
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+
+        <div className="mt-16 pt-8 border-t border-border/40">
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Trellis. All rights reserved.
           </p>
