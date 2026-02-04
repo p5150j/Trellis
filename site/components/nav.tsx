@@ -29,7 +29,7 @@ export function Nav() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-xs font-medium transition-colors",
+                "text-[11px] font-medium tracking-wide transition-colors",
                 pathname === item.href
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"

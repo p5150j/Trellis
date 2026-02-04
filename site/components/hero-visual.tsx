@@ -15,9 +15,33 @@ export function HeroVisual() {
             <circle cx="1" cy="1" r="0.4" fill="currentColor" className="text-foreground" opacity="0.06" />
           </pattern>
 
+          {/* Hexagon pattern for background texture - darker */}
+          <pattern id="hexPattern" width="80" height="70" patternUnits="userSpaceOnUse">
+            <polygon points="40,0 80,20 80,50 40,70 0,50 0,20" fill="none" stroke="#1B4D4A" strokeWidth="1" opacity="0.18" />
+          </pattern>
+
+          {/* Vignette mask - fades out from center */}
+          <radialGradient id="vignetteMask" cx="50%" cy="50%" r="60%" fx="50%" fy="50%">
+            <stop offset="0%" stopColor="white" stopOpacity="1" />
+            <stop offset="60%" stopColor="white" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+          <mask id="vignette">
+            <rect width="100%" height="100%" fill="url(#vignetteMask)" />
+          </mask>
+
           {/* Sharp glow */}
           <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="1.5" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          {/* Soft glow for ambient particles */}
+          <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
@@ -28,10 +52,62 @@ export function HeroVisual() {
             <stop offset="0%" stopColor="#14B8A6" />
             <stop offset="100%" stopColor="#0D9488" />
           </linearGradient>
+
+          {/* Gradient overlay - more visible */}
+          <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#14B8A6" stopOpacity="0.06" />
+            <stop offset="50%" stopColor="transparent" stopOpacity="0" />
+            <stop offset="100%" stopColor="#4A7C79" stopOpacity="0.05" />
+          </linearGradient>
         </defs>
 
-        {/* Background grid */}
-        <rect width="100%" height="100%" fill="url(#grid)" />
+        {/* Background layers - hex pattern with vignette fade */}
+        <rect width="100%" height="100%" fill="url(#hexPattern)" mask="url(#vignette)" />
+
+        {/* === AMBIENT FLOATING PARTICLES - BIGGER === */}
+        <g>
+          {/* Slow drifting particles */}
+          <circle cx="80" cy="60" r="5" fill="#6B9AC4" filter="url(#softGlow)" opacity="0.5">
+            <animate attributeName="cy" values="60;40;60" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="80;95;80" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="520" cy="90" r="4" fill="#4A7C79" filter="url(#softGlow)" opacity="0.45">
+            <animate attributeName="cy" values="90;65;90" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="520;505;520" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.35;0.6;0.35" dur="5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="150" cy="340" r="4.5" fill="#C9879E" filter="url(#softGlow)" opacity="0.45">
+            <animate attributeName="cy" values="340;315;340" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="150;170;150" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.35;0.6;0.35" dur="6s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="500" cy="320" r="5" fill="#5CA99D" filter="url(#softGlow)" opacity="0.5">
+            <animate attributeName="cy" values="320;295;320" dur="7s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="500;485;500" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.4;0.65;0.4" dur="4.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="400" cy="40" r="3.5" fill="#D4956A" filter="url(#softGlow)" opacity="0.4">
+            <animate attributeName="cy" values="40;20;40" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="400;415;400" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.3;0.55;0.3" dur="5.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="40" cy="180" r="4" fill="#9B84B8" filter="url(#softGlow)" opacity="0.45">
+            <animate attributeName="cy" values="180;160;180" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="40;55;40" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.35;0.6;0.35" dur="6s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="570" cy="240" r="4.5" fill="#5BA3AD" filter="url(#softGlow)" opacity="0.5">
+            <animate attributeName="cy" values="240;220;240" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="570;555;570" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.4;0.65;0.4" dur="4s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="250" cy="370" r="3.5" fill="#D4A86A" filter="url(#softGlow)" opacity="0.4">
+            <animate attributeName="cy" values="370;350;370" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="250;265;250" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.3;0.55;0.3" dur="5s" repeatCount="indefinite" />
+          </circle>
+        </g>
 
         {/* === INPUT STREAMS - Many sources === */}
 
@@ -328,6 +404,59 @@ export function HeroVisual() {
         </g>
         <path id="out3" d="M 330 220 L 400 270 Q 480 350, 580 440 L 750 580" fill="none" opacity="0" />
 
+        {/* === DATA INDICATORS - BIGGER floating metrics === */}
+        <g style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', fontWeight: 500 }}>
+          {/* Input side indicators */}
+          <text x="50" y="50" fill="#6B9AC4" opacity="0.6">
+            <tspan>API</tspan>
+            <animate attributeName="opacity" values="0.45;0.75;0.45" dur="3s" repeatCount="indefinite" />
+          </text>
+          <text x="-20" y="140" fill="#5CA99D" opacity="0.55">
+            <tspan>DB</tspan>
+            <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite" />
+          </text>
+          <text x="60" y="225" fill="#D4956A" opacity="0.6">
+            <tspan>CSV</tspan>
+            <animate attributeName="opacity" values="0.45;0.75;0.45" dur="3.5s" repeatCount="indefinite" />
+          </text>
+          <text x="20" y="285" fill="#C9879E" opacity="0.55">
+            <tspan>XML</tspan>
+            <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4.5s" repeatCount="indefinite" />
+          </text>
+          <text x="100" y="350" fill="#9B84B8" opacity="0.5">
+            <tspan>JSON</tspan>
+            <animate attributeName="opacity" values="0.35;0.65;0.35" dur="5s" repeatCount="indefinite" />
+          </text>
+
+          {/* Output side indicators */}
+          <text x="450" y="70" fill="#4A7C79" opacity="0.55">
+            <tspan>REST</tspan>
+            <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3.5s" repeatCount="indefinite" />
+          </text>
+          <text x="520" y="215" fill="#4A7C79" opacity="0.6">
+            <tspan>SYNC</tspan>
+            <animate attributeName="opacity" values="0.45;0.75;0.45" dur="4s" repeatCount="indefinite" />
+          </text>
+          <text x="480" y="360" fill="#4A7C79" opacity="0.55">
+            <tspan>PUSH</tspan>
+            <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4.5s" repeatCount="indefinite" />
+          </text>
+
+          {/* Floating metrics near hub */}
+          <text x="160" y="155" fill="#5BA3AD" opacity="0.5">
+            <tspan>128kb</tspan>
+            <animate attributeName="opacity" values="0.35;0.65;0.35" dur="5s" repeatCount="indefinite" />
+          </text>
+          <text x="390" y="145" fill="#4A7C79" opacity="0.5">
+            <tspan>99.9%</tspan>
+            <animate attributeName="opacity" values="0.35;0.65;0.35" dur="6s" repeatCount="indefinite" />
+          </text>
+          <text x="380" y="265" fill="#4A7C79" opacity="0.45">
+            <tspan>24ms</tspan>
+            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="5.5s" repeatCount="indefinite" />
+          </text>
+        </g>
+
         {/* === Scattered accent nodes - muted === */}
         <circle cx="120" cy="90" r="2" fill="#6B9AC4" opacity="0.4" />
         <circle cx="500" cy="120" r="2" fill="#4A7C79" opacity="0.35" />
@@ -336,16 +465,46 @@ export function HeroVisual() {
         <circle cx="180" cy="320" r="2" fill="#C9879E" opacity="0.35" />
         <circle cx="450" cy="80" r="1.5" fill="#5CA99D" opacity="0.3" />
 
-        {/* Labels - muted gray */}
-        <text x="20" y="380" fill="#4A7C79" style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '0.1em' }} opacity="0.65">
-          SOURCES
-        </text>
-        <text x="252" y="280" fill="#4A7C79" style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '0.1em' }} opacity="0.65">
-          PROCESS
-        </text>
-        <text x="490" y="380" fill="#4A7C79" style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '0.1em' }} opacity="0.65">
-          OUTPUTS
-        </text>
+        {/* Additional geometric accents - BIGGER */}
+        <polygon points="90,125 100,115 110,125 100,135" fill="#5CA99D" opacity="0.4">
+          <animate attributeName="opacity" values="0.3;0.55;0.3" dur="4s" repeatCount="indefinite" />
+        </polygon>
+        <polygon points="530,170 540,160 550,170 540,180" fill="#4A7C79" opacity="0.35">
+          <animate attributeName="opacity" values="0.25;0.5;0.25" dur="5s" repeatCount="indefinite" />
+        </polygon>
+        <rect x="125" y="270" width="12" height="12" fill="#D4956A" opacity="0.35" transform="rotate(45 131 276)">
+          <animate attributeName="opacity" values="0.25;0.5;0.25" dur="4.5s" repeatCount="indefinite" />
+        </rect>
+        <rect x="490" y="280" width="10" height="10" fill="#4A7C79" opacity="0.3" transform="rotate(45 495 285)">
+          <animate attributeName="opacity" values="0.2;0.45;0.2" dur="5.5s" repeatCount="indefinite" />
+        </rect>
+        {/* Extra geometric shapes */}
+        <polygon points="180,85 188,75 196,85 188,95" fill="#6B9AC4" opacity="0.35">
+          <animate attributeName="opacity" values="0.25;0.5;0.25" dur="4.5s" repeatCount="indefinite" />
+        </polygon>
+        <rect x="420" y="130" width="10" height="10" fill="#4A7C79" opacity="0.3" transform="rotate(45 425 135)">
+          <animate attributeName="opacity" values="0.2;0.45;0.2" dur="5s" repeatCount="indefinite" />
+        </rect>
+
+        {/* Labels as chips */}
+        <g>
+          <rect x="15" y="365" width="70" height="22" rx="4" fill="#1B4D4A" opacity="0.12" />
+          <text x="50" y="380" fill="#1B4D4A" style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }} textAnchor="middle" opacity="0.8">
+            SOURCES
+          </text>
+        </g>
+        <g>
+          <rect x="247" y="262" width="66" height="22" rx="4" fill="#1B4D4A" opacity="0.12" />
+          <text x="280" y="277" fill="#1B4D4A" style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }} textAnchor="middle" opacity="0.8">
+            PROCESS
+          </text>
+        </g>
+        <g>
+          <rect x="485" y="365" width="70" height="22" rx="4" fill="#1B4D4A" opacity="0.12" />
+          <text x="520" y="380" fill="#1B4D4A" style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }} textAnchor="middle" opacity="0.8">
+            OUTPUTS
+          </text>
+        </g>
       </svg>
     </div>
   );
