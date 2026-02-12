@@ -2,8 +2,8 @@
 title: "Trellis Platform"
 partner: "arus"
 stage: "incubation"
-description: "The research and scoring engine that powers arus impact — scraping, enriching, and scoring 178+ nonprofits for AI/ML fit"
-tags: ["Data Pipelines", "Web Scraping", "ML Scoring", "Python"]
+description: "The nonprofit operating system — middleware that wires disconnected tools into a unified data layer, then adds AI/ML intelligence on top"
+tags: ["Integration Middleware", "AI/ML", "Data Pipelines", "Nonprofit Ops"]
 score: 100
 website: "https://impact.arus.io"
 founded: "2025"
@@ -14,9 +14,17 @@ date: "2025-02-10"
 featured: true
 ---
 
-## The Engine Behind Trellis
+## The Problem Everyone Shares
 
-The Trellis Platform is the internal research and scoring engine that powers everything we do. It scrapes data from IRS filings, Airtable databases, and the open web, then enriches each organization profile with AI-generated insights. The result is a quantitative fit score across six dimensions that tells us exactly where our engineering time will have the most impact.
+Every nonprofit we've researched — all 178 of them — runs on a patchwork of disconnected systems. A donor CRM that doesn't talk to accounting. A case management tool that doesn't connect to outcomes reporting. Grant compliance tracked in spreadsheets. Payroll allocated across programs by hand.
+
+The staff aren't doing mission work. They're being the integration layer between systems that should be talking to each other automatically.
+
+The cycle is always the same: funding comes in → compliance and security consume bandwidth → program delivery happens despite the infrastructure → back to fundraising → repeat. At every stage, the tech is working against them.
+
+**Nonprofits don't have a technology problem. They have a wiring problem.** The tools exist. QuickBooks works. Bloomerang works. Apricot works. What doesn't work is the space between them.
+
+Trellis is the platform that fills that space.
 
 <OrgProfile
   partner="arus"
@@ -29,64 +37,104 @@ The Trellis Platform is the internal research and scoring engine that powers eve
 
 <StageBadge stage="incubation" />
 
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 5,
+    impact: 5,
+    size: 5,
+    viability: 5,
+    growth: 5
+  }}
+/>
+
 <MetricRow
   metrics={[
     { label: "Orgs Researched", value: "178+" },
-    { label: "Scoring Dimensions", value: "6" },
-    { label: "Top Proposals", value: "20" }
+    { label: "Architecture Layers", value: "3" },
+    { label: "Projects Using Framework", value: "19" }
   ]}
 />
 
-## Why We Built This
+## Layer 1: Map the Broken Landscape
 
-Before Trellis, finding the right nonprofit partners meant manual research, spreadsheet tracking, and gut-feel decisions. We knew there had to be a better way to match engineering talent with mission-driven organizations. The platform automates the entire pipeline from discovery to scoring, replacing intuition with data.
+Before building anything, we map how a nonprofit actually operates — not how they should operate, how they do. The full operational pipeline: funding sources through revenue intake, finance and accounting, program delivery, HR and volunteers, communications, compliance and reporting.
+
+For a typical 30-person nonprofit with a $500K–$5M budget, the map reveals the same pattern every time: 6-10 disconnected SaaS tools, manual data re-entry between all of them, spreadsheets as the universal glue, and staff spending 30-40% of their time being the human middleware between systems.
+
+This mapping exercise is the diagnostic layer. It tells us exactly where the wiring is broken and what to fix first.
 
 <BeforeAfter
   before={[
-    "Manual research across dozens of sources",
-    "Spreadsheet tracking with no standardization",
-    "Gut-feel decisions on partner fit"
+    "Donor CRM, accounting, case management, and grant tracking all disconnected",
+    "Staff re-entering the same data across 6-10 systems manually",
+    "Grant compliance assembled by hand from spreadsheets every quarter",
+    "No unified view of outcomes across programs"
   ]}
   after={[
-    "Automated scraping pipelines across IRS, web, and databases",
-    "AI-enriched organization profiles",
-    "Quantitative fit scoring across 6 dimensions"
+    "Every system connected through a unified middleware layer",
+    "Data entered once propagates everywhere automatically",
+    "Automated grant reporting pulling from connected outcome data",
+    "Cross-program analytics and real-time dashboards"
   ]}
 />
 
-## Scoring Methodology
+## Layer 2: Wire It Together
 
-Our scoring engine evaluates every nonprofit across six dimensions, each weighted to reflect what makes a successful engineering partnership. The dimensions are designed to identify organizations where a small amount of technical work can unlock outsized impact.
+The integration layer. Not replacing any existing tool — building the connective tissue between all of them.
 
-- **AI/ML Fit** — How well does the org's mission align with AI/ML solutions?
-- **Tech Gap** — How underserved is the org from a technology standpoint?
-- **Impact Potential** — What's the scale of impact if we build the right thing?
-- **Org Size** — Is the org large enough to sustain a technical partnership?
-- **Financial Viability** — Does the org have stable funding to support implementation?
-- **Growth Trajectory** — Is the org growing in a way that amplifies our contribution?
+A middleware service that intercepts events from each system, transforms data into a unified model, and pushes it where it needs to go. When a donation comes through Stripe, the middleware automatically: creates the receipt, codes the transaction in QuickBooks to the right fund, updates the donor record in the CRM, deducts from the relevant grant budget, and sends a personalized thank-you email with real outcome data — all in under 30 seconds, with zero manual intervention.
 
-Each dimension is scored 1–5, then combined into a weighted composite score out of 100. The top 20 proposals represent the highest-fit opportunities across our entire research pipeline.
+The unified data model has six entities at its core: **Contacts** (donors, clients, volunteers, staff), **Transactions** (donations, expenses, grants), **Programs** (services, activities, outcomes), **Funding Sources** (grants, campaigns, major gifts), **Outcomes** (impact metrics, client progress, community indicators), and **Compliance** (reporting requirements, deadlines, audit trails).
+
+### Technical Architecture
+
+- **API Connector Hub** — REST/webhook integrations with Bloomerang, QuickBooks, Stripe, Apricot, Gusto, Mailchimp, and other common nonprofit tools
+- **Message Queue** — Redis or RabbitMQ decoupling producers from consumers so a slow QuickBooks sync never blocks a donor thank-you email
+- **Business Rules Engine** — Maps org-specific logic: "if donation is restricted to Program X, code it to Class X in QBO and deduct from Grant Y budget"
+- **Error Handler** — Exponential backoff retries, staff alerts only when human intervention is needed
+- **Data Transformer** — Normalizes data formats across vendors into the canonical model
+
+## Layer 3: AI/ML Intelligence
+
+Once the data is clean, connected, and flowing through a unified model, you layer AI/ML capabilities on top. This is where the real leverage lives — but only because layers 1 and 2 make it possible. AI without clean, connected data is just a hallucination engine.
+
+### AI-Powered Intake
+
+Clients speak in their native language. The system transcribes (Whisper), translates, populates structured intake fields automatically, analyzes sentiment for distress/urgency signals, and auto-triages to the right case worker with a priority score. A 45-minute paper intake reduced to 15 minutes. Clients served in their language from the first interaction. Crisis signals flagged immediately instead of discovered days later.
+
+### Intelligent Case Matching
+
+ML matching engine that embeds a client's needs profile, searches historical data for similar clients with successful outcomes, scores dropout risk, and optimizes the match against current staff capacity and specializations. Replaces round-robin assignment with evidence-based matching. Proactive check-ins before a client disengages.
+
+### Donor Intelligence
+
+Predictive models trained on the connected donor data: lapsed donor reactivation scoring, major gift identification, campaign response prediction, retention risk flagging. A development director gets a daily briefing: "these 5 donors are at risk of lapsing, these 3 are ready for a major gift ask, this campaign segment will outperform."
+
+### Automated Grant Reporting
+
+Grant reports that write themselves. The system pulls outcome data, financial data, and narrative templates from the connected layer, assembles draft reports against each funder's specific requirements, and surfaces gaps where data is missing. Two weeks of manual report assembly compressed to a review-and-submit workflow.
+
+### Outcomes Prediction
+
+Models trained on longitudinal program data to identify: which participants are at risk of dropping out (before it happens), which program configurations produce the best outcomes, where resource allocation should shift. Turns "we think our program works" into "here's the evidence, and here's where to invest more."
 
 ## Build Phases
 
 <BuildPhases
   phases={[
-    { name: "Data Collection", timeline: "Month 1-2", status: "in-progress" },
-    { name: "Enrichment Pipeline", timeline: "Month 2-3", status: "in-progress" },
-    { name: "Scoring Engine", timeline: "Month 3-4", status: "complete" },
-    { name: "Web Platform", timeline: "Month 4-5", status: "proposed" }
+    { name: "Landscape Mapping & Diagnostic", timeline: "Month 1-2", status: "complete" },
+    { name: "Integration Middleware Core", timeline: "Month 2-5", status: "in-progress" },
+    { name: "Unified Data Model & Dashboards", timeline: "Month 5-8", status: "proposed" },
+    { name: "AI/ML Layer", timeline: "Month 8-12", status: "proposed" }
   ]}
 />
 
-## What's Next
-
-The web platform is the final piece — a public-facing site where nonprofits can explore their scores, see where they stand, and understand what a partnership with arus would look like. We're also expanding the scraping pipeline to cover international nonprofits and additional data sources.
-
-<TagList tags={["Data Pipelines", "Web Scraping", "ML Scoring", "Python"]} />
+<TagList tags={["Integration Middleware", "AI/ML", "Data Pipelines", "Nonprofit Ops", "Open Source"]} />
 
 <SourceList
   sources={[
     { title: "arus impact", url: "https://impact.arus.io" },
-    { title: "Research Methodology", url: "https://impact.arus.io/research" }
+    { title: "Trellis Framework (Build Log)", url: "/field-notes/178-orgs-six-dimensions" }
   ]}
 />
