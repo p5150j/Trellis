@@ -1,0 +1,118 @@
+---
+title: "Local News AI Studio"
+partner: "American Journalism Project"
+stage: "proposal"
+description: "Portfolio intelligence and shared AI tools for 53 local newsrooms — revenue analytics, civic data pipelines, and investment optimization"
+tags: ["Portfolio Analytics", "Revenue ML", "Civic Data", "NLP"]
+score: 86.2
+website: "https://www.theajp.org"
+founded: "2019"
+location: "Washington, DC"
+headcount: "20-50"
+funding: "Venture philanthropy for local news"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+The American Journalism Project is the largest venture philanthropy dedicated to local news in the U.S. — over $250 million raised since 2019, 53 nonprofit newsrooms funded across 36 states, and a portfolio that collectively generated $128 million in revenue in 2024. They don't just write checks: AJP provides hands-on business consulting, helps newsrooms build sustainable revenue models, and tracks portfolio-wide performance metrics like revenue growth, journalist hires, and return on investment.
+
+In late 2024, AJP launched an AI/Product Studio with $1.4 million in grants to 28 portfolio newsrooms for AI-driven revenue and civic data projects. It's the first time AJP has explicitly funded AI tooling across its network — and it creates a textbook "build once, deploy everywhere" opportunity. Most of these newsrooms have 5-30 staff, no engineering team, and are individually trying to figure out AI adoption with limited budgets. A shared infrastructure layer changes the economics entirely.
+
+<OrgProfile
+  partner="American Journalism Project"
+  website="https://www.theajp.org"
+  founded="2019"
+  location="Washington, DC"
+  headcount="20-50"
+  funding="Venture philanthropy for local news"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 4,
+    tech_gap: 4,
+    impact: 5,
+    size: 3,
+    viability: 5,
+    growth: 5
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Portfolio Newsrooms", value: "53" },
+    { label: "AI Studio Grantees", value: "28", icon: "zap" },
+    { label: "Fit Score", value: "86.2" }
+  ]}
+/>
+
+## The Problem Today
+
+AJP operates at two levels, and both have data bottlenecks.
+
+**At the HQ level**, AJP's investment team tracks portfolio performance across 53 organizations — revenue growth, subscriber counts, donor retention, journalist hires, audience reach, and ROI on every grant dollar. This tracking likely happens through a combination of quarterly reports from grantees, spreadsheets, and manual aggregation. When AJP's first 22 grantees achieved 3x median ROI and 99% annual revenue increases, someone had to compile those numbers from dozens of separate sources. Every new grant cycle means manually pulling, cleaning, and comparing data across organizations that each track metrics differently.
+
+**At the newsroom level**, AJP's portfolio organizations are typically small nonprofits running WordPress or a similar CMS, using Google Analytics for traffic, Mailchimp or similar tools for newsletters, and tracking revenue across subscriptions, donations, events, and advertising in spreadsheets or basic CRM tools. Each newsroom experiments with AI independently — one might try ChatGPT for headline testing, another might use Otter.ai for transcription, a third might not have started at all. There's no shared infrastructure, no common data format, and no way for AJP to see what's working across the portfolio.
+
+The AI/Product Studio's $1.4 million in grants to 28 newsrooms for "AI-driven revenue and civic data projects" is the right instinct. But without shared tooling, each newsroom will spend that money figuring out the same problems in isolation.
+
+<BeforeAfter
+  before={[
+    "Portfolio performance aggregated manually from 53 separate quarterly reports",
+    "Each newsroom tracks revenue in its own format — spreadsheets, QuickBooks, donor CRMs",
+    "28 AI Studio grantees building revenue and civic data tools independently",
+    "No cross-portfolio view of what AI experiments are working"
+  ]}
+  after={[
+    "Unified portfolio dashboard pulling live metrics from all 53 newsrooms",
+    "Standardized revenue and audience data pipeline across the network",
+    "Shared AI toolkit that any portfolio newsroom can plug into",
+    "Cross-portfolio intelligence: what works at The Colorado Sun gets deployed to Cardinal"
+  ]}
+/>
+
+## What We'd Build
+
+The work splits naturally into two tracks: tools for AJP's investment team at HQ, and shared infrastructure for the portfolio newsrooms. Both feed into each other — better data from newsrooms makes better investment decisions, and better investment analytics helps newsrooms understand what's working.
+
+### Portfolio Intelligence Dashboard
+
+AJP already tracks impressive metrics: their first 22 grantees achieved 3x median ROI, added $23 million in net revenue (36% growth), and hired 226 journalists. But compiling these numbers across 53 organizations that each report differently is a heavy lift. A portfolio intelligence layer would standardize data ingestion from grantees — pulling revenue, audience, and engagement metrics into a unified view. ML models could then predict which newsrooms are on track, which need intervention, and which grant strategies drive the strongest outcomes. When AJP commits $8.2 million in grants for the next cycle, they'd have predictive analytics behind each allocation decision instead of trailing indicators.
+
+### Revenue Analytics Toolkit
+
+The AI/Product Studio specifically funded "AI-driven revenue" projects. Most local nonprofit newsrooms generate revenue from four streams: reader subscriptions and memberships, individual donations, events, and advertising. Each stream has different conversion patterns, churn signals, and growth levers. A shared revenue analytics toolkit — deployed as a lightweight integration with the CMS and email tools each newsroom already runs — could identify which reader behaviors predict conversion to paying members, flag at-risk subscribers before they churn, and model the revenue impact of different engagement strategies. Build it once at the platform level, configure it per newsroom.
+
+### Civic Data Pipeline
+
+The other half of the AI/Product Studio focus: "civic data projects." Local newsrooms sit on valuable civic information — city council coverage, school board meetings, court records, public budget data — but it's locked in article text, PDFs, and reporter notebooks. An NLP pipeline that extracts structured civic data from newsroom content (entity extraction, event detection, public records linking) would give each newsroom a searchable civic database built from their own reporting. Across the portfolio, this creates a national civic data layer — 53 newsrooms covering 36 states, all contributing structured local government data that no single organization could build alone.
+
+### Cross-Portfolio Content Intelligence
+
+With 53 newsrooms producing content daily, there's a natural network effect that's currently untapped. A content intelligence layer could identify stories with cross-market relevance (housing policy in Colorado that applies in Nebraska), surface reporting gaps where multiple newsrooms cover adjacent beats, and help newsrooms learn from each other's engagement patterns. This isn't a recommendation engine for readers — it's an intelligence layer for editors, helping them see what's resonating across the AJP network and where collaboration opportunities exist.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Portfolio Data Standardization", timeline: "Month 1-3", status: "proposed" },
+    { name: "Revenue Analytics Toolkit", timeline: "Month 3-6", status: "proposed" },
+    { name: "Civic Data NLP Pipeline", timeline: "Month 5-8", status: "proposed" },
+    { name: "Cross-Portfolio Intelligence", timeline: "Month 8-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["Portfolio Analytics", "Revenue ML", "Civic Data", "NLP", "Local News"]} />
+
+<SourceList
+  sources={[
+    { title: "AJP 2025 Impact Report", url: "https://www.theajp.org/wp-content/uploads/2025/10/Impact-Report-2025.pdf" },
+    { title: "AJP Impact Overview", url: "https://www.theajp.org/about/impact/" },
+    { title: "AJP 2025 Year in Review", url: "https://www.theajp.org/2025-review/" },
+    { title: "American Journalism Project — Wikipedia", url: "https://en.wikipedia.org/wiki/American_Journalism_Project" }
+  ]}
+/>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { getPostBySlug, getAllSlugs } from "@/lib/mdx";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -48,8 +49,8 @@ export default async function FieldNotePage({ params }: PageProps) {
   }
 
   return (
-    <article className="container mx-auto px-4 py-16">
-      <div className="mx-auto max-w-3xl">
+    <article className="container-wide section">
+      <div className="mx-auto max-w-4xl">
         <Button asChild variant="ghost" className="mb-8">
           <Link href="/field-notes">&larr; Back to Field Notes</Link>
         </Button>
@@ -69,7 +70,7 @@ export default async function FieldNotePage({ params }: PageProps) {
         <Separator className="my-8" />
 
         <div className="prose prose-neutral dark:prose-invert max-w-none">
-          <MDXRemote source={post.content} />
+          <MDXRemote source={post.content} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
         </div>
       </div>
     </article>

@@ -1,0 +1,117 @@
+---
+title: "Cybersecurity Intelligence for the Humanitarian Sector"
+partner: "CyberPeace Institute"
+stage: "proposal"
+description: "Scaling threat intelligence, volunteer matching, and cyber-resilience tooling from 240 NGOs to 10,000"
+tags: ["Threat Intelligence", "NLP", "Matching Algorithms", "Security"]
+score: 87.5
+website: "https://cyberpeaceinstitute.org"
+founded: "2019"
+location: "Geneva, Switzerland"
+headcount: "40-80"
+funding: "Foundation and government funded"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+The CyberPeace Institute is the cybersecurity arm of the humanitarian world — an NGO that protects other NGOs. They track cyberattacks against hospitals, aid organizations, and critical infrastructure, and they deploy volunteer cybersecurity professionals to help nonprofits that can't afford security teams of their own. Their CyberPeace Builders program has grown to 1,500 volunteers serving 240+ NGOs, backed by Microsoft, the Hewlett Foundation, Craig Newmark Philanthropies, and Splunk. They've documented over 3,178 cyberattacks on Ukrainian infrastructure alone through their CyberPeace Tracer platform.
+
+Here's where it gets interesting: they've committed to the Beyond 125 Action Plan with Microsoft and the City of The Hague — scaling from 240 NGOs to **10,000 by March 2027**. That's a 40x increase in two years. Their current systems — a matchmaking platform, manual threat analysis, sector-specific reports — were built for hundreds. They need to work for thousands. That's an ML infrastructure problem.
+
+<OrgProfile
+  partner="CyberPeace Institute"
+  website="https://cyberpeaceinstitute.org"
+  founded="2019"
+  location="Geneva, Switzerland"
+  headcount="40-80"
+  funding="Foundation and government funded"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 4,
+    size: 3,
+    viability: 5,
+    growth: 5
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Attacks Tracked", value: "3,178+" },
+    { label: "NGOs Served", value: "240+" },
+    { label: "Volunteers", value: "1,500" },
+    { label: "Fit Score", value: "87.5" }
+  ]}
+/>
+
+## The Problem Today
+
+The CyberPeace Institute runs two core platforms: **CyberPeace Tracer**, which tracks and visualizes cyberattacks against humanitarian targets, and **CyberPeace Builders**, which matches volunteer cybersecurity professionals with NGOs that need help. Both platforms are hitting scaling walls.
+
+On the Tracer side, analysts manually classify incoming attack reports — determining threat type (ransomware, phishing, DDoS, data breach), assessing severity, identifying patterns, and producing sector-specific threat landscape reports like their APAC Financial Inclusion report. As attack volume grows and they expand beyond the Ukraine conflict into new sectors and geographies, manual classification can't keep up.
+
+On the Builders side, the matchmaking system connects volunteers from companies like Adobe, Capgemini, HPE, Mastercard, Okta, Rapid7, and WithSecure with NGOs based on the type of help needed. Craig Newmark Philanthropies invested $500K specifically to expand this platform, and an upgraded matchmaking system launched in 2025 — but going from 240 to 10,000 NGOs means the matching logic needs to get dramatically smarter. A volunteer who speaks French, knows Microsoft 365 security, and has availability on Tuesdays needs to be matched instantly with a Francophone NGO in West Africa that just had its Office 365 tenant compromised.
+
+Meanwhile, Splunk is already partnering with them on AI/ML-based cyber-threat intelligence for NGOs, and they've launched an AI Skills for Nonprofits initiative with Microsoft Philanthropies. The appetite for ML is there. The internal capacity to build it isn't.
+
+<BeforeAfter
+  before={[
+    "Manual threat classification across CyberPeace Tracer — analysts sort attack reports by hand",
+    "Matchmaking platform connects 1,500 volunteers to 240 NGOs, but can't scale to 10,000",
+    "Threat landscape reports produced manually for each sector and geography",
+    "NGO cyber-readiness assessments done case-by-case with no pattern recognition across orgs"
+  ]}
+  after={[
+    "ML-powered threat classification auto-tags and prioritizes incoming attack data in Tracer",
+    "Intelligent volunteer matching scores expertise, language, timezone, and NGO needs in real time",
+    "Automated threat landscape analysis generates sector alerts from structured attack data",
+    "Cross-org pattern recognition identifies systemic vulnerabilities across the NGO portfolio"
+  ]}
+/>
+
+## What We'd Build
+
+### CyberPeace Builders Matching Engine
+
+The highest-impact build. The current matchmaking platform pairs volunteers with NGOs, but as they scale from 240 to 10,000 organizations, the matching logic needs to go from rule-based to ML-powered. The engine would score matches on multiple dimensions: volunteer expertise (endpoint security vs. cloud configuration vs. incident response), language and timezone alignment, NGO tech stack (Microsoft 365, Google Workspace, on-prem), threat profile, and urgency. It would learn from completed engagements — which pairings led to successful outcomes, which skills actually mattered for which threat types, where timezone mismatches caused delays. The goal is near-instant matching when an NGO reports an incident, even at 10,000-org scale.
+
+### Tracer Threat Classification Pipeline
+
+CyberPeace Tracer already tracks thousands of attacks, but classification is manual. An ML pipeline would ingest incoming attack reports and automatically classify by threat type, severity, likely attribution, and affected sector. The model gets trained on the Institute's existing labeled dataset of 3,178+ documented attacks and enriched with external threat intelligence feeds. As new attacks come in, the system clusters similar incidents, detects campaign-level patterns (e.g., a coordinated phishing wave targeting health NGOs in East Africa), and auto-generates alerts. Analysts shift from doing classification to reviewing and refining it — dramatically increasing throughput as attack volume grows.
+
+### Sector Threat Landscape Automation
+
+The Institute produces detailed threat landscape reports — like their Cyber Resilience for Financial Inclusion report covering APAC — but each one requires significant manual analysis. An automated pipeline would continuously aggregate attack data from Tracer, segment by sector (healthcare, humanitarian aid, financial inclusion, education) and geography, detect emerging trends, and draft report sections with supporting data visualizations. Analysts would edit and validate rather than build from scratch. When a new threat pattern emerges in one sector, the system flags whether it's appearing in others — turning reactive reporting into proactive intelligence.
+
+### NGO Cyber-Readiness Scoring
+
+With 10,000 NGOs in the pipeline, the Institute needs to triage which organizations need help most urgently. A scoring model would assess each NGO's cyber-readiness based on their tech stack, existing security measures, sector risk profile, geographic threat landscape, and past incident history. NGOs with the widest gaps between their risk exposure and their defenses get prioritized. This feeds directly into the Builders matching engine — high-risk NGOs get matched with more experienced volunteers, while lower-risk organizations might receive automated guidance and training resources like the AI Skills for Nonprofits materials developed with Microsoft.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Builders Matching Engine", timeline: "Month 1-3", status: "proposed" },
+    { name: "Tracer Classification Pipeline", timeline: "Month 3-6", status: "proposed" },
+    { name: "Threat Landscape Automation", timeline: "Month 6-9", status: "proposed" },
+    { name: "NGO Cyber-Readiness Scoring", timeline: "Month 9-12", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["Threat Intelligence", "NLP", "Matching Algorithms", "Security", "Classification"]} />
+
+<SourceList
+  sources={[
+    { title: "CyberPeace Builders Annual Report 2024", url: "https://cyberpeaceinstitute.org/news/cyberpeace-builders-annual-report-2024/" },
+    { title: "CyberPeace Institute Financial Report 2024", url: "https://cyberpeaceinstitute.org/wp-content/uploads/2025/12/CyperPeace-Institute-Financial-Report-2024.pdf" },
+    { title: "Cyber Resilience for Financial Inclusion: Threat Landscape Report", url: "https://cyberpeaceinstitute.org/wp-content/uploads/2025/10/APAC-Financial-Inclusion-Report.pdf" },
+    { title: "CyberPeace Institute on Digital Watch Observatory", url: "https://dig.watch/actor/cyberpeace-institute" }
+  ]}
+/>

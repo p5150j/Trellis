@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Home", href: "/" },
+  { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
-  { name: "Field Notes", href: "/field-notes" },
+  { name: "Build Log", href: "/field-notes" },
   { name: "Research", href: "/research" },
 ];
 
@@ -16,21 +16,25 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
-      <div className="container-wide flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-sm font-medium tracking-tight text-foreground">
-            Trellis
+      <div className="container-wide flex h-20 items-center justify-between">
+        <Link href="/" className="flex items-baseline gap-2 group">
+          <span className="text-lg font-semibold tracking-tight text-foreground">
+            arus
+          </span>
+          <span className="text-xs font-medium tracking-wide text-muted-foreground">
+            impact
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "text-[11px] font-medium tracking-wide transition-colors",
-                pathname === item.href
+                "text-sm font-medium tracking-wide transition-colors",
+                pathname === item.href ||
+                  (item.href !== "/" && pathname.startsWith(item.href))
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               )}
@@ -38,6 +42,20 @@ export function Nav() {
               {item.name}
             </Link>
           ))}
+          <a
+            href="https://calendar.app.google/zmKtCzL13ifEghob6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 px-5 py-2 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Book a Call
+          </a>
+          <a
+            href="https://arus.io"
+            className="px-3 py-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            arus.io →
+          </a>
         </nav>
 
         {/* Mobile menu button - simplified for now */}

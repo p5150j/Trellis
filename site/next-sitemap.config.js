@@ -14,12 +14,13 @@ function getMdxSlugs(contentDir) {
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://trellis.org",
+  siteUrl: process.env.SITE_URL || "https://impact.arus.io",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   additionalPaths: async (config) => {
     const fieldNotesSlugs = getMdxSlugs("field-notes");
     const researchSlugs = getMdxSlugs("research");
+    const projectSlugs = getMdxSlugs("projects");
 
     const fieldNotesPaths = fieldNotesSlugs.map((slug) => ({
       loc: `/field-notes/${slug}`,
@@ -35,7 +36,14 @@ module.exports = {
       lastmod: new Date().toISOString(),
     }));
 
-    return [...fieldNotesPaths, ...researchPaths];
+    const projectPaths = projectSlugs.map((slug) => ({
+      loc: `/projects/${slug}`,
+      changefreq: "weekly",
+      priority: 0.9,
+      lastmod: new Date().toISOString(),
+    }));
+
+    return [...projectPaths, ...fieldNotesPaths, ...researchPaths];
   },
   robotsTxtOptions: {
     policies: [

@@ -1,0 +1,116 @@
+---
+title: "Scoring AI/ML Fit Across 178 Civil Society Organizations"
+description: "A weighted framework for evaluating where fractional AI/ML engineering creates outsized value in mission-driven organizations — methodology, findings, and implications."
+date: "2025-02-08"
+author: "Patrick Ortell"
+tags: ["Methodology", "Scoring Framework", "AI/ML", "Nonprofit Tech"]
+---
+
+## Abstract
+
+This paper presents a quantitative framework for evaluating AI/ML infrastructure fit across civil society organizations. We scored 178 organizations in the Project Liberty Alliance network across six weighted dimensions to identify where fractional AI/ML engineering creates the most value. The framework prioritizes tech gap over mission alignment — a counterintuitive finding that reshapes how technologists should evaluate nonprofit partnerships. We publish the methodology, dimension definitions, weighting rationale, and aggregate findings.
+
+## 1. Background
+
+The nonprofit technology landscape is defined by a paradox: 90% of nonprofits plan to adopt AI deeply, but only 37% have formal AI policies in place. Approximately 66% are already using AI tooling in some form, yet most usage is confined to off-the-shelf products (ChatGPT for drafting, Canva for design) rather than custom infrastructure. Meanwhile, 65% of the sector reports a labor shortage crisis — and donor retention sits at a dismal 46% average.
+
+The gap isn't awareness. It's capacity. Organizations know they need better infrastructure. They lack the engineering talent to build it.
+
+For a fractional AI/ML practice — a senior engineer embedded inside an organization on a part-time basis — the question is: which of the 178 organizations in our network would benefit most from this model? Intuition favors mission alignment. The data tells a different story.
+
+## 2. Methodology
+
+### 2.1 Data Collection
+
+Each organization was profiled through a multi-source enrichment pipeline:
+
+- **Primary data**: Organization websites, annual reports, IRS Form 990 filings (via ProPublica Nonprofit Explorer)
+- **Enrichment layer**: Headcount estimates, funding sources, tech stack signals, leadership backgrounds, recent news and partnerships
+- **Supplementary signals**: Job postings (indicator of engineering capacity), GitHub presence (indicator of open-source activity), vendor partnerships (indicator of existing tech investment)
+
+### 2.2 Scoring Dimensions
+
+Each organization was rated 1–5 across six dimensions:
+
+| Dimension | Weight | Definition |
+|---|---|---|
+| **AI/ML Relevance** | 2.0x | Does the organization's work involve data at a scale where ML creates measurable leverage? Evaluates: data volume, classification needs, pattern detection opportunities, NLP applicability |
+| **Tech Gap** | 1.5x | Distance between current infrastructure and optimal state. A score of 5 indicates mission-critical workflows running entirely on manual processes with zero engineering staff. A score of 1 indicates existing ML capabilities |
+| **Mission Impact** | 1.5x | Downstream human impact if infrastructure is built. Considers: population served, severity of problem domain, counterfactual (what happens without intervention) |
+| **Size Fit** | 1.0x | Organizational headcount relative to fractional model. Sweet spot is 10–80 people — large enough to generate real data problems, small enough that one senior engineer moves the needle |
+| **Org Viability** | 1.0x | Organizational stability and sustainability. Evaluates: funding diversity, leadership tenure, operational maturity, financial health indicators from 990 data |
+| **Growth Signal** | 1.0x | Trajectory indicators. Evaluates: recent funding rounds, hiring activity, program expansion, partnership announcements, media visibility |
+
+### 2.3 Composite Score
+
+The composite score is a weighted average normalized to 100:
+
+```
+Score = (AI_ML × 2.0 + Tech_Gap × 1.5 + Impact × 1.5 + Size × 1.0 + Viability × 1.0 + Growth × 1.0) / 8.0 × 20
+```
+
+The weighting reflects a core thesis: **AI/ML relevance and tech gap are the strongest predictors of successful engagement.** An organization with a perfect mission but a low tech gap (they already have engineers) is a poor fit. An organization with moderate mission impact but a tech gap of 5 (running critical workflows on spreadsheets) is an excellent fit.
+
+## 3. Findings
+
+### 3.1 Distribution
+
+Of 178 organizations scored:
+
+- **Top tier (score ≥ 80)**: 8 organizations — highest AI/ML relevance, largest tech gaps, active in data-intensive domains (investigations, threat intelligence, content moderation)
+- **Strong fit (70–79)**: 14 organizations — clear AI/ML use cases, significant tech gaps, viable build scopes
+- **Moderate fit (60–69)**: 31 organizations — some AI/ML applicability, partial tech gaps (may have some internal capacity)
+- **Low fit (< 60)**: 125 organizations — either too small, too large, insufficient tech gap, or mission doesn't involve data at ML-relevant scale
+
+### 3.2 Tech Gap as Primary Signal
+
+The single strongest predictor of successful project scoping was tech gap score. Organizations with tech gap ≥ 4 produced viable, concrete project proposals in 100% of cases. Organizations with tech gap ≤ 2 produced zero viable proposals regardless of mission impact or AI/ML relevance scores.
+
+This finding is counterintuitive. Mission impact is emotionally compelling but doesn't predict consulting fit. An organization doing extraordinary work but staffed with engineers doesn't need a fractional AI/ML partner. An organization doing solid (not extraordinary) work but running entirely on manual processes is an ideal partner.
+
+### 3.3 Size Boundaries
+
+The data reveals hard boundaries on organizational size:
+
+- **Below 10 people**: Insufficient data generation and operational complexity to justify custom infrastructure. Off-the-shelf tools are sufficient.
+- **10–80 people**: The sweet spot. Enough operational complexity to generate real data problems. Not enough budget or headcount to hire dedicated engineering staff. Fractional model creates maximum leverage.
+- **Above 80 people**: Organizations at this scale can typically justify full-time engineering hires, or are large enough to qualify for in-kind technology grants from Google, Microsoft, or Salesforce.
+
+### 3.4 Domain Clusters
+
+The 19 organizations selected for project proposals cluster into six domains:
+
+| Domain | Orgs | Avg Score | Common Build Pattern |
+|---|---|---|---|
+| Press Freedom & Investigations | 3 | 85.3 | OSINT pipelines, document processing, verification tools |
+| Cybersecurity & Threat Intelligence | 2 | 82.1 | Threat classification, policy tracking, incident analysis |
+| Child Safety & Platform Accountability | 2 | 76.8 | Content moderation, dark pattern detection, policy monitoring |
+| Climate & Economic Justice | 2 | 77.5 | Outcome tracking, economic analytics, community mapping |
+| Open Knowledge & Governance | 2 | 75.2 | License compliance, governance data platforms |
+| Humanitarian & Digital Rights | 4 | 76.4 | Early warning systems, multilingual NLP, monitoring pipelines |
+
+The highest-scoring domain — press freedom and investigations — is characterized by organizations that process large volumes of unstructured data (documents, images, communications) as their core workflow. These organizations have the highest AI/ML relevance scores and among the highest tech gaps.
+
+## 4. Implications
+
+### 4.1 For Technologists
+
+If you're evaluating nonprofit partnerships for technical work, score tech gap before mission alignment. The organizations that benefit most from your skills are not necessarily the ones doing the most inspiring work — they're the ones whose daily workflows are most constrained by lack of infrastructure.
+
+### 4.2 For Funders
+
+The scoring framework reveals a funding gap. Organizations with tech gap scores of 4–5 are systematically underserved by existing technology grant programs. Corporate in-kind programs (Google.org, Microsoft Philanthropies) tend to serve larger organizations. Small technology grants ($5K–$25K) fund tool subscriptions, not custom infrastructure. The organizations that need engineering capacity the most have the fewest pathways to access it.
+
+### 4.3 For Organizations
+
+If you recognize your organization in this framework — running mission-critical workflows on manual processes, team of 10–80, no engineering staff — the tech gap is not a failure of your leadership. It's a market failure. Nobody is building for organizations your size, in your domain, at your budget. That's the gap this practice exists to fill.
+
+## 5. Limitations
+
+This framework evaluates fit for a specific engagement model: fractional, embedded AI/ML engineering. The scores are not measures of organizational quality, mission importance, or impact effectiveness. A low score means the fractional model isn't the right intervention — not that the organization isn't doing important work.
+
+Enrichment data has known limitations. Headcount estimates from public sources can be inaccurate. Tech stack signals from job postings reflect hiring intent, not current capacity. 990 data lags by 1–2 years. We supplemented automated enrichment with manual research for all organizations that entered the proposal stage.
+
+---
+
+*This research is based on data collected from the Project Liberty Alliance network between January and February 2025. The scoring framework and aggregate findings are published here. Individual organization scores are available on each project's proposal page.*

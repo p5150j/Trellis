@@ -1,0 +1,111 @@
+---
+title: "Asia-Pacific Digital Rights Intelligence"
+partner: "EngageMedia"
+stage: "proposal"
+description: "Internet shutdown detection, multilingual content analysis, and digital rights monitoring across Southeast Asia"
+tags: ["NLP", "Multilingual", "Digital Rights", "Monitoring"]
+score: 77.5
+website: "https://engagemedia.org"
+founded: "2005"
+location: "Melbourne, Australia"
+headcount: "25-40"
+funding: "Foundation and grant funded"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+EngageMedia is a 20-year-old digital rights collective with a distributed team across eight countries in the Asia-Pacific — monitoring internet shutdowns in Myanmar, tracking platform censorship in Thailand and Indonesia, training journalists and activists in digital security across the Philippines, Cambodia, and Malaysia. They combine capacity building, knowledge sharing, and digital storytelling to support human rights defenders across one of the most digitally contested regions on earth. They're part of the #KeepItOn coalition (Access Now's global internet shutdown campaign) and have been documenting digital rights violations since before most people knew the term. But their monitoring is entirely manual — researchers in each country individually track threats with no automated detection, no cross-country pattern analysis, and no multilingual NLP infrastructure to process content across Burmese, Thai, Bahasa Indonesia, Filipino, and Khmer.
+
+<OrgProfile
+  partner="EngageMedia"
+  website="https://engagemedia.org"
+  founded="2005"
+  location="Melbourne, Australia"
+  headcount="25-40"
+  funding="Foundation and grant funded"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 4,
+    tech_gap: 4,
+    impact: 4,
+    size: 3,
+    viability: 4,
+    growth: 4
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Countries", value: "8" },
+    { label: "Years Active", value: "20" },
+    { label: "Fit Score", value: "77.5" }
+  ]}
+/>
+
+## The Problem Today
+
+When Myanmar's military imposes an internet shutdown, EngageMedia learns about it the same way everyone else does — through social media reports and partner contacts. When Thailand censors online content ahead of protests, their team in Bangkok manually documents what's blocked. When Indonesian platforms remove political speech, researchers screenshot and catalog violations one by one. There's no automated detection layer that monitors network connectivity data (OONI, IODA, Cloudflare Radar) across all eight countries simultaneously. No system that correlates a sudden traffic drop in Yangon with social media reports of military checkpoints.
+
+The multilingual challenge makes this exponentially harder. Southeast Asian languages — Burmese, Thai, Bahasa Indonesia, Filipino, Khmer, Malay — are severely under-resourced in NLP. Pre-trained models exist for Thai and Indonesian but are poor for Burmese and Khmer. Content moderation research that CCDH can do for English with off-the-shelf classifiers requires custom model development for EngageMedia's linguistic context. And their distributed team across eight time zones means threats that spike overnight in one country may not be noticed until the next day's check-in.
+
+<BeforeAfter
+  before={[
+    "Internet shutdowns detected through social media reports and partner contacts, hours or days after onset",
+    "Content censorship documented manually, one screenshot at a time, in each country independently",
+    "No cross-country pattern analysis — Myanmar shutdown and Thai censorship tracked as separate events"
+  ]}
+  after={[
+    "Automated shutdown detection correlating OONI, IODA, and Cloudflare Radar data across 8 countries",
+    "Multilingual content analysis pipeline processing Burmese, Thai, Bahasa, Filipino, and Khmer",
+    "Regional digital rights dashboard enabling cross-country trend analysis and early warning"
+  ]}
+/>
+
+## What We'd Build
+
+### Internet Shutdown Early Warning System
+
+An automated monitoring pipeline that continuously ingests network measurement data from OONI (Open Observatory of Network Interference), IODA (Internet Outage Detection and Analysis), and Cloudflare Radar across all eight EngageMedia countries. The system correlates network-level signals — BGP route withdrawals, traffic drops, DNS failures — with social media signals in local languages to distinguish genuine internet shutdowns from routine outages. When connectivity anomalies match patterns associated with deliberate shutdowns (typically correlated with elections, protests, or military actions), the system alerts the regional team. Historical tracking creates a documented record that strengthens advocacy with ASEAN bodies and international organizations.
+
+Data sources:
+- **OONI Probe measurements**: Censorship test results from volunteer probes across Southeast Asia
+- **IODA (Georgia Tech)**: Internet outage detection via BGP, active probing, and darknet analysis
+- **Cloudflare Radar**: Traffic volume and routing anomaly data
+- **Social media signals**: Keyword monitoring in local languages for reports of connectivity loss
+
+### Multilingual Content Analysis Pipeline
+
+The most technically ambitious build, and the one with the greatest long-term value. NLP models for analyzing online content across Southeast Asian languages — detecting censorship patterns, hate speech, and disinformation in Burmese, Thai, Bahasa Indonesia, Filipino, and Khmer. For Thai and Indonesian, fine-tuning existing multilingual models (XLM-RoBERTa or similar) on EngageMedia's domain-specific content. For Burmese and Khmer — genuinely under-resourced languages — starting with transfer learning from related scripts and building labeled datasets with EngageMedia's in-country researchers who understand local context.
+
+The pipeline would detect: government-directed content removal patterns, coordinated disinformation campaigns around elections, platform moderation failures in non-English content, and emerging censorship of specific topics (LGBTQ+ content, labor organizing, ethnic minority issues) across the region.
+
+### Regional Digital Rights Dashboard
+
+An aggregation layer connecting the shutdown detection and content analysis pipelines into a unified dashboard for EngageMedia's distributed team. Country-by-country views show current threat levels, recent incidents, and trend lines. Cross-country analysis reveals regional patterns — when one government's censorship tactics spread to neighbors, the dashboard surfaces the correlation. The data feeds directly into EngageMedia's advocacy reports and partner briefings, replacing the current manual compilation process.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Shutdown Detection Pipeline", timeline: "Month 1-3", status: "proposed" },
+    { name: "Thai/Indonesian NLP Models", timeline: "Month 3-6", status: "proposed" },
+    { name: "Burmese/Khmer NLP Development", timeline: "Month 6-10", status: "proposed" },
+    { name: "Regional Rights Dashboard", timeline: "Month 10-12", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["NLP", "Multilingual", "Digital Rights", "Monitoring", "Internet Freedom"]} />
+
+<SourceList
+  sources={[
+    { title: "EngageMedia Programs", url: "https://engagemedia.org" },
+    { title: "OONI Explorer", url: "https://explorer.ooni.org/" },
+    { title: "#KeepItOn Coalition", url: "https://www.accessnow.org/keepiton/" }
+  ]}
+/>

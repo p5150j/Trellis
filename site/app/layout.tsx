@@ -12,15 +12,15 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Trellis",
-    template: "%s | Trellis",
+    default: "arus impact",
+    template: "%s | arus impact",
   },
   description:
-    "Supporting communities through research-driven insights and collaborative solutions.",
+    "AI/ML infrastructure for nonprofits. Building data pipelines, integration middleware, and ML tools for organizations doing real impact work.",
   openGraph: {
-    title: "Trellis",
+    title: "arus impact",
     description:
-      "Supporting communities through research-driven insights and collaborative solutions.",
+      "AI/ML infrastructure for nonprofits. Building data pipelines, integration middleware, and ML tools for organizations doing real impact work.",
     type: "website",
   },
 };

@@ -1,0 +1,118 @@
+---
+title: "Multi-Stakeholder Coordination Intelligence"
+partner: "Christchurch Call Foundation"
+stage: "proposal"
+description: "Compliance monitoring, crisis response automation, and emerging tech threat assessment for a global coalition against terrorist content online"
+tags: ["NLP", "Data Engineering", "Automation", "Policy Intelligence"]
+score: 83.8
+website: "https://www.christchurchcall.org"
+founded: "2019"
+location: "Wellington, New Zealand"
+headcount: "Unknown"
+funding: "Government-backed coalition"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+The Christchurch Call is not a typical nonprofit — it is a coordination body that sits between governments and tech platforms, managing 25 commitments to eliminate terrorist and violent extremist content (TVEC) online. New Zealand and France launched the Call on May 15, 2019, after the Christchurch mosque attack killed 51 people in an attack that was livestreamed on Facebook. Today the Foundation coordinates over 120 signatories — sovereign governments, major platforms like Meta and Google, and smaller online service providers — with Dame Jacinda Ardern serving as unpaid Patron. Their newest initiative, the Elevate project, tackles how generative AI and immersive technologies create entirely new vectors for terrorist exploitation. The right ML infrastructure here is not about building content classifiers — platforms already do that. It is about giving a small coordination team the tools to monitor compliance, orchestrate crisis response, and assess emerging threats across a coalition that spans dozens of countries and hundreds of platforms.
+
+<OrgProfile
+  partner="Christchurch Call Foundation"
+  website="https://www.christchurchcall.org"
+  founded="2019"
+  location="Wellington, New Zealand"
+  headcount="Unknown"
+  funding="Government-backed coalition"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 3,
+    size: 5,
+    viability: 4,
+    growth: 4
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Signatories", value: "120+" },
+    { label: "Commitments", value: "25" },
+    { label: "Fit Score", value: "83.8" }
+  ]}
+/>
+
+## The Problem Today
+
+The Christchurch Call Foundation manages a coalition of over 120 signatories — governments and online service providers — each of which has agreed to 25 commitments around TVEC. But tracking whether those commitments are actually being met is largely manual. Signatory governments submit progress reports in different formats and on different timelines. Platforms report content removal actions through their own transparency reports, each structured differently. The Foundation's team has to manually review, normalize, and synthesize this information to produce annual progress reports and brief the Leaders' Summit.
+
+When a crisis hits — a terrorist attack that is filmed and uploaded — the Foundation activates crisis response protocols to accelerate content takedown across platforms. This process was strengthened in December 2025, but it still relies on manual notification chains: emails, phone calls, and messaging threads to alert platforms that attack content is circulating and needs urgent removal. The difference between a 30-minute takedown and a 4-hour takedown is whether the right people at the right platforms see the alert in time.
+
+Meanwhile, the Elevate project, launched in November 2025 with $1.3 million CAD from the Canadian Government's Community Resilience Fund, is tackling a new frontier: how generative AI, immersive technologies, and distributed platforms create novel TVEC risks. But assessing these risks across rapidly evolving technologies requires systematic monitoring of research, incident reports, and platform policy changes — the kind of synthesis work that overwhelms a small team trying to stay current across dozens of technology domains simultaneously.
+
+<BeforeAfter
+  before={[
+    "Manual review of signatory compliance reports in inconsistent formats and timelines",
+    "Crisis response via email and phone chains — speed depends on who sees the alert first",
+    "Emerging tech threat monitoring spread across research papers, platform blogs, and policy documents"
+  ]}
+  after={[
+    "Automated compliance dashboard normalizing reporting data across 120+ signatories",
+    "Real-time crisis alert system with automated platform notification and takedown tracking",
+    "AI-assisted horizon scanning surfacing emerging TVEC risks across generative AI, XR, and distributed platforms"
+  ]}
+/>
+
+## What We'd Build
+
+### Signatory Compliance Monitoring Dashboard
+
+The foundation piece. The Christchurch Call contains 25 specific commitments, and over 120 signatories have agreed to uphold them. Today, tracking compliance means manually reading transparency reports from Google, Meta, Microsoft, and dozens of smaller platforms — each in a different format, covering different time periods, with different definitions of what counts as TVEC removal. Government signatories submit their own progress updates on separate timelines.
+
+We would build an NLP pipeline that ingests transparency reports and government submissions, extracts structured compliance data, and normalizes it into a single dashboard. The system would flag gaps — which signatories have not reported, which commitments have weak coverage, where platform definitions diverge from the Call's standards. Instead of spending weeks assembling an annual progress report manually, the Foundation would have a living compliance picture updated as new reports come in. This directly supports their core mandate: holding signatories accountable to the commitments they made.
+
+### Crisis Response Automation Layer
+
+When a terrorist attack is filmed and uploaded, the clock starts immediately. The Christchurch Call's crisis response protocol — strengthened in December 2025 — requires rapid coordination across platforms to identify and remove attack content before it goes viral. But the notification chain is still manual: the Foundation's team contacts platform trust-and-safety teams individually, tracks who has acknowledged the alert, and monitors whether content is actually being removed.
+
+We would build an automated crisis alert and tracking system. When a crisis event is declared, the system sends structured alerts to all relevant platform contacts simultaneously, tracks acknowledgment and response times, and provides a real-time view of takedown progress across the coalition. It would integrate with GIFCT's hash-sharing database so that once attack content is identified on one platform, the hash is automatically distributed to all participating platforms for matching. The goal is not to replace human judgment about what constitutes a crisis — that remains the Foundation's call — but to eliminate the coordination overhead once a crisis is declared.
+
+### Elevate Emerging Tech Threat Intelligence
+
+The Elevate project, funded by Canada's Community Resilience Fund, focuses on how AI and emerging technologies create new vectors for terrorist exploitation — generative AI producing propaganda, immersive tech enabling virtual recruitment environments, distributed platforms making content moderation harder. But staying current across these rapidly evolving domains is a monitoring problem that exceeds what a small team can handle manually.
+
+We would build a horizon-scanning system that continuously monitors research publications, platform policy updates, incident reports, and regulatory developments across the technology domains Elevate covers. NLP classification would flag items relevant to specific TVEC risk categories. The system would produce weekly briefings synthesizing the most significant developments, track how platform policies evolve in response to new threats, and maintain a structured knowledge base of emerging tech risks that the Foundation can reference when briefing governments and preparing for the Leaders' Summit. This is a direct extension of the work Elevate was designed to do — it just gives the team a systematic way to do it at scale.
+
+### ROOST Integration and Small Platform Support Tools
+
+The Foundation's partnership with ROOST — the Open-Source Trust and Safety Tooling Hub, formalized in February 2025 — aims to help smaller platforms tackle TVEC even when they lack dedicated trust-and-safety teams. But connecting smaller platforms to open-source tooling requires understanding what each platform needs, what tools are available, and where the gaps are.
+
+We would build an intake and matching system: a structured assessment that profiles a smaller platform's content types, scale, and existing moderation capabilities, then recommends specific ROOST tools and configurations. The system would track which platforms have adopted which tools, measure outcomes, and surface patterns — for example, identifying that video-first platforms consistently lack certain detection capabilities. This makes the ROOST partnership operational instead of advisory, giving the Foundation data on where open-source tooling is actually making a difference.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Compliance Monitoring Dashboard", timeline: "Month 1-3", status: "proposed" },
+    { name: "Crisis Response Automation", timeline: "Month 3-5", status: "proposed" },
+    { name: "Elevate Threat Intelligence System", timeline: "Month 5-8", status: "proposed" },
+    { name: "ROOST Small Platform Matching", timeline: "Month 8-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["NLP", "Data Engineering", "Automation", "Policy Intelligence", "Crisis Response"]} />
+
+<SourceList
+  sources={[
+    { title: "Launch of the Christchurch Call Foundation", url: "https://www.elysee.fr/en/emmanuel-macron/2024/05/14/joint-press-release-between-france-and-new-zealand-launch-of-the-christchurch-call-foundation" },
+    { title: "Canadian investment advances Christchurch Call's work on emerging tech and small platforms", url: "https://www.christchurchcall.org/canadian-investment-advances-christchurch-calls-work-to-tackle-violent-extremist-content-risk-in-emerging-technologies-and-to-support-small-and-medium-sized-platforms-to-counter-tvec/" },
+    { title: "Christchurch Call Foundation Announcement", url: "https://www.christchurchcall.org/christchurch-call-foundation-announcement/" },
+    { title: "Christchurch Call — Reflection and Future Outlook (2025)", url: "https://veda.polac.cz/wp-content/uploads/2025/10/Christchurch-Call-na-prahu-sedmi-let-Reflexe-a-vyhled.pdf" }
+  ]}
+/>

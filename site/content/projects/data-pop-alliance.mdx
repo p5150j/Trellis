@@ -1,0 +1,108 @@
+---
+title: "Humanitarian Early Warning Infrastructure"
+partner: "Data-Pop Alliance"
+stage: "proposal"
+description: "Flood prediction pipelines, geospatial analytics, and humanitarian data infrastructure for climate-vulnerable communities"
+tags: ["Climate ML", "Geospatial", "Data Pipelines", "Humanitarian"]
+score: 81.2
+website: "https://datapopalliance.org"
+founded: "2013"
+location: "Virtual (Global)"
+headcount: "Unknown"
+funding: "McGovern Foundation funded"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+Data-Pop Alliance is a "think-and-do tank" co-founded by Harvard's Humanitarian Initiative, MIT Media Lab, and the Overseas Development Institute, with a clear mission: change the world with data. They work across three pillars — diagnosis, capacity building, and systems transformation — applying data science to humanitarian challenges in Latin America, Sub-Saharan Africa, and South Asia. Their academic pedigree is strong, but they need production-grade data engineering to move from research insights to operational tools. Nowhere is this more urgent than OPAL4HA — their flagship platform using generative AI to predict floods in Senegal and trigger anticipatory cash transfers through the World Food Programme.
+
+<OrgProfile
+  partner="Data-Pop Alliance"
+  website="https://datapopalliance.org"
+  founded="2013"
+  location="Virtual (Global)"
+  headcount="Unknown"
+  funding="McGovern Foundation funded"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 3,
+    size: 4,
+    viability: 4,
+    growth: 4
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Founded By", value: "Harvard/MIT/ODI" },
+    { label: "PJMF Grants", value: "$1.05M+" },
+    { label: "Fit Score", value: "81.2" }
+  ]}
+/>
+
+## The Problem Today
+
+DPA's most impactful project — OPAL4HA — needs to predict flood events in Senegal accurately enough to trigger anticipatory cash transfers through WFP before disaster strikes. That means combining satellite imagery, weather station data, river gauge readings, and historical flood records into a reliable ML pipeline. Right now, this data arrives in incompatible formats from different agencies, each with its own quality issues and update cadence. The research team has the domain expertise to interpret the data, but no production engineering to build the ingestion layer, train and validate prediction models, or integrate with WFP's disbursement systems. Meanwhile, their geospatial work in Nepal and Dhaka faces the same challenge: analysts spending more time wrangling GIS data than analyzing it.
+
+<BeforeAfter
+  before={[
+    "Satellite, weather, and river gauge data arriving in incompatible formats with no automated ingestion",
+    "Flood prediction models stuck in research notebooks, not production pipelines",
+    "Geospatial analysis for Caring Cities projects done manually in desktop GIS tools"
+  ]}
+  after={[
+    "Automated data pipeline combining satellite, weather, and hydrological data for Senegal flood prediction",
+    "Production ML model generating early warnings that trigger WFP anticipatory cash transfers",
+    "Scalable geospatial analytics infrastructure serving urban development projects across South Asia"
+  ]}
+/>
+
+## What We'd Build
+
+### OPAL4HA Flood Prediction Pipeline
+
+The centerpiece. An end-to-end ML pipeline that ingests satellite imagery (Sentinel-2, CHIRPS rainfall estimates), weather station feeds, river gauge data from Senegalese hydrology agencies, and historical flood records into a unified data layer. Time-series forecasting models predict flood probability at the commune level, and when confidence crosses a threshold, the system triggers anticipatory cash transfers through WFP's disbursement infrastructure. The pipeline needs to handle data arriving at different cadences — satellite passes every few days, weather stations hourly, river gauges irregularly — and produce reliable predictions despite gaps and sensor failures.
+
+The system would connect:
+- **Satellite data**: Sentinel-2 imagery, CHIRPS precipitation estimates, soil moisture indices
+- **Ground truth**: River gauge stations along the Senegal and Casamance rivers
+- **Weather models**: GFS and ECMWF forecast data for precipitation outlook
+- **Historical records**: Previous flood extent maps and damage assessments
+- **Disbursement trigger**: API integration with WFP's cash transfer systems
+
+### Geospatial Analytics Infrastructure
+
+DPA's Caring Cities program in Nepal and Dhaka needs scalable geospatial analysis — extracting urban development features from satellite imagery, overlaying demographic and infrastructure data, and generating analytics dashboards for city planners. Currently this happens in desktop GIS tools (QGIS, ArcGIS) one city at a time. A cloud-based pipeline would automate feature extraction, standardize data from different country contexts, and produce interactive dashboards accessible to non-GIS-trained policymakers working in low-bandwidth environments.
+
+### Election Integrity Monitoring Tools
+
+DPA's research on generative AI and democracy — funded by a $400K McGovern Foundation grant studying AI-generated content in Mexican and Brazilian elections — needs automated content analysis pipelines. The builds: social media ingestion for election-related content, classifiers that distinguish AI-generated from authentic political content, and longitudinal tracking of how AI-generated narratives spread across platforms and languages (Spanish, Portuguese).
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "OPAL4HA Data Pipeline", timeline: "Month 1-4", status: "proposed" },
+    { name: "Flood Prediction Model", timeline: "Month 4-7", status: "proposed" },
+    { name: "Geospatial Infrastructure", timeline: "Month 7-10", status: "proposed" },
+    { name: "Election Monitoring Tools", timeline: "Month 10-12", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["Climate ML", "Geospatial", "Data Pipelines", "Humanitarian", "Early Warning"]} />
+
+<SourceList
+  sources={[
+    { title: "DPA Annual Report 2023-2024", url: "https://datapopalliance.org/annual-report-overview-and-outlook-2023-2024/" },
+    { title: "Data-Pop Alliance Programs", url: "https://datapopalliance.org/" },
+    { title: "DPA Quarterly Update Q3 2025", url: "https://datapopalliance.org/our-latest-quarterly-update-q3-2025-is-out/" }
+  ]}
+/>

@@ -1,0 +1,113 @@
+---
+title: "Research Data Infrastructure & Portfolio Intelligence"
+partner: "Hopelab"
+stage: "proposal"
+description: "Unified research data pipelines, portfolio outcome tracking, and AI safety evaluation for a youth mental health innovation lab and impact investor"
+tags: ["Data Infrastructure", "Research Analytics", "AI Safety", "Youth Mental Health"]
+score: 82.5
+website: "https://hopelab.org"
+founded: "2001"
+location: "San Francisco, CA"
+headcount: "Unknown"
+funding: "Omidyar family backed"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+Hopelab is a 20-year-old social innovation lab and impact investor at the intersection of technology and youth mental health. They do three things simultaneously: they invest in AI-driven mental health startups (Wave, ReflexAI, Koko, YourPath, Violet, Lex), they run their own research programs including the Early Career Research Grant that provides proprietary youth survey datasets to academic teams, and they incubate new initiatives like Purpose Commons with Cornell's Purpose Science and Innovation Exchange. Each of these activities generates valuable data -- survey responses, portfolio company outcomes, research partnership findings -- but none of it is connected. Hopelab operates as a hub for youth mental health innovation with no hub-level data infrastructure.
+
+<OrgProfile
+  partner="Hopelab"
+  website="https://hopelab.org"
+  founded="2001"
+  location="San Francisco, CA"
+  headcount="Unknown"
+  funding="Omidyar family backed"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 4,
+    size: 4,
+    viability: 4,
+    growth: 3
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Years Active", value: "20+" },
+    { label: "Ventures Portfolio", value: "6+ startups" },
+    { label: "Fit Score", value: "82.5" }
+  ]}
+/>
+
+## The Problem Today
+
+Hopelab's research arm collects proprietary survey data -- 1,267 LGBTQ+ youth responses on online support experiences, 1,526 responses on parasocial relationships with AI chatbots -- and distributes it to Early Career Research Grant recipients: five academic teams per year, each receiving $10,000 and 12 months of advisory support from Principal Researcher Mike Parent, Ph.D. But the data lives in flat files handed off manually. There is no shared infrastructure for cohort tracking, no standardized schema across survey waves, and no way for Hopelab's own team to run queries against the accumulated dataset as it grows year over year.
+
+Meanwhile, Hopelab's ventures arm has invested in six startups since 2021 -- Wave (AI mental health, 2025), ReflexAI (crisis response AI, 2024 Series A), YourPath (2023), Violet (2023), Lex (2023), and Koko (2021) -- each building their own AI-powered mental health products for young people. Hopelab evaluates these companies primarily through manual check-ins and qualitative reporting. There is no systematic framework for comparing product safety across the portfolio, no aggregated outcome data, and no way to connect what the ventures are learning in production to what the research teams are finding in surveys.
+
+On top of this, Purpose Commons -- a purpose science initiative incubated at Hopelab with backing from the Bezos Family Foundation, Resonance Philanthropies, and The Gambrell Foundation -- runs its own research track in partnership with Cornell's PSiX lab. And external research partnerships with the Born This Way Foundation and the Eidos LGBTQ+ Health Initiative at UPenn produce additional findings. All of these streams operate independently.
+
+The result: Hopelab funds the research, backs the startups, and incubates the programs, but cannot answer basic cross-cutting questions like "What are AI chatbot safety patterns across our portfolio companies?" or "How do survey findings from our Early Career grantees align with outcomes from our venture investments?"
+
+<BeforeAfter
+  before={[
+    "Survey datasets handed off as flat files to grant recipients, no shared query layer",
+    "Portfolio company outcomes tracked via manual check-ins, no standardized metrics",
+    "Research from Purpose Commons, Born This Way Foundation, and Eidos at UPenn siloed from venture data"
+  ]}
+  after={[
+    "Unified research data lake with standardized schema across survey cohorts and grant years",
+    "Portfolio intelligence dashboard tracking AI safety and youth outcomes across 6+ investments",
+    "Cross-program analytics connecting research findings to venture portfolio performance"
+  ]}
+/>
+
+## What We'd Build
+
+### Research Data Infrastructure
+
+The foundation layer. Hopelab's Early Career Research Grant program generates growing survey datasets each year -- LGBTQ+ youth online support experiences, parasocial relationships with AI chatbots, and more as new cohorts are funded. Today these are static file handoffs. We would build a structured data lake with standardized schemas across survey waves, a simple query interface so Hopelab's research team (led by Mike Parent) can run longitudinal analyses without manual data wrangling, and a secure data sharing layer so grant recipients can access their allocated datasets programmatically rather than via email.
+
+This also becomes the ingestion point for data from Purpose Commons (the Cornell PSiX partnership) and external research collaborations with Born This Way Foundation and Eidos at UPenn. Every research stream feeds into one place. As the dataset grows across grant cohorts and partnerships, Hopelab builds a unique longitudinal picture of youth mental health that no single study could produce alone.
+
+### Portfolio AI Safety Evaluation Framework
+
+Hopelab invests in AI-powered mental health products aimed at young people -- a category where safety isn't optional. Wave uses AI for mental health support, ReflexAI applies AI to crisis response, and Koko experiments with peer support models. Each of these products interacts with vulnerable youth populations, and Hopelab's own research on parasocial relationships with AI chatbots (the 1,526-response dataset) suggests the risks are real and under-studied.
+
+We would build a standardized evaluation framework that Hopelab can apply across its ventures portfolio: automated safety testing for youth-facing AI products, covering areas like crisis escalation handling, appropriate boundaries in AI-human interaction, bias detection across demographic groups (particularly the Black, Latinx, and LGBTQ+ youth populations that Hopelab centers), and longitudinal outcome tracking. This transforms Hopelab from a passive investor into an active safety partner for its portfolio companies, and the evaluation data feeds back into the research data lake.
+
+### Cross-Program Analytics & Insight Engine
+
+The layer that connects everything. Once the research data infrastructure and portfolio evaluation framework are in place, we build the analytics that answer Hopelab's cross-cutting questions: Where do survey findings about youth AI chatbot experiences align (or conflict) with what portfolio companies are seeing in production? Which intervention approaches show promise across multiple research partnerships? What patterns in the Southern youth digital divide research (Hopelab's 2025 findings on regional mental health barriers) should inform how portfolio companies design for underserved populations?
+
+This is not a generic dashboard. It is a purpose-built insight engine that connects Hopelab's three pillars -- research, ventures, and incubated programs like Purpose Commons -- into a single analytical view. For a small team evaluating where to deploy limited resources, this is the difference between gut-feel allocation and evidence-driven strategy.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Research Data Lake & Schema Design", timeline: "Month 1-3", status: "proposed" },
+    { name: "Portfolio AI Safety Framework", timeline: "Month 3-6", status: "proposed" },
+    { name: "Cross-Program Analytics Engine", timeline: "Month 6-9", status: "proposed" },
+    { name: "Grant Recipient Data Sharing Layer", timeline: "Month 9-12", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["Data Infrastructure", "Research Analytics", "AI Safety", "Youth Mental Health", "Portfolio Intelligence"]} />
+
+<SourceList
+  sources={[
+    { title: "Hopelab Early Career Research Grant Program", url: "https://hopelab.org/programs/early-career-research" },
+    { title: "Hopelab 2024 Learning Journey", url: "https://hopelab.org/stories/2024-story/" },
+    { title: "Southern Youth Digital Mental Health Barriers (2025)", url: "https://www.prnewswire.com/news-releases/new-research-reveals-digital-divide-southern-young-people-face-unique-barriers-to-mental-health-support-online-302576337.html" }
+  ]}
+/>

@@ -1,0 +1,111 @@
+---
+title: "Grant Intelligence & Policy Tracking"
+partner: "Future of Life Institute"
+stage: "proposal"
+description: "Grant portfolio analytics, AI policy monitoring, and due diligence tooling for the organization at the center of AI safety advocacy"
+tags: ["Grant Analytics", "Policy Tracking", "NLP", "Due Diligence"]
+score: 85.0
+website: "https://futureoflife.org"
+founded: "2014"
+location: "Cambridge, MA"
+headcount: "Unknown"
+funding: "Major philanthropic backing"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+The Future of Life Institute sits at the center of the global AI safety conversation. They authored the viral open letter calling for a pause on advanced AI development — signed by Elon Musk, Steve Wozniak, and thousands of researchers — and they manage a $25 million grant program funded by Ethereum co-founder Vitalik Buterin. FLI funds organizations like the Berkeley Existential Risk Initiative, the Center for Humane Technology, Foresight Institute, and The Future Society. Four groups they funded now advise the U.S. AI Safety Institute, and several serve as key players in London's AI safety plans.
+
+But FLI is fundamentally a grantmaker and policy advocacy organization, not a research lab. Their core workflows — evaluating grant applications, tracking grantee outcomes, monitoring AI policy developments across jurisdictions, and vetting organizations for due diligence — are all manually managed. For an organization deploying millions of dollars annually into the AI safety ecosystem, that manual overhead is a strategic bottleneck.
+
+<OrgProfile
+  partner="Future of Life Institute"
+  website="https://futureoflife.org"
+  founded="2014"
+  location="Cambridge, MA"
+  headcount="Unknown"
+  funding="Major philanthropic backing"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 4,
+    size: 3,
+    viability: 5,
+    growth: 4
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Grant Program", value: "$25M", icon: "target" },
+    { label: "Founded", value: "2014" },
+    { label: "Fit Score", value: "85.0" }
+  ]}
+/>
+
+## The Problem Today
+
+FLI runs grants ranging from $100,000 to $5 million, funding AI safety research, public engagement campaigns, and new organization incubation — they plan to launch three to five new organizations per year through the Future of Life Foundation. Each grant cycle involves reviewing applications, evaluating alignment with FLI's safety priorities, tracking disbursements, and measuring downstream impact. With $4.87 million in contributions flowing through in 2023 alone, and a $25 million Buterin-funded grant program on top of that, the portfolio management demands are substantial.
+
+On the policy side, FLI tracks AI regulation across dozens of jurisdictions — the EU AI Act, U.S. executive orders, UK AI Safety Institute developments, and emerging frameworks worldwide. Their advocacy team needs to know what is being proposed, where, by whom, and how it maps against FLI's policy positions. Right now, that tracking happens through newsletters, manual document review, and institutional knowledge. Jaan Tallinn, Skype co-founder and FLI board member, has publicly stated that the organization's focus is shifting toward "regulatory interventions and trying to educate lawmakers" — making systematic policy intelligence even more critical.
+
+Due diligence is another pain point. In 2023, FLI offered a $100,000 grant to a foundation connected to a Swedish far-right publication and had to immediately revoke it after discovering the affiliation during vetting. That kind of reputational risk is exactly what automated screening tooling prevents.
+
+<BeforeAfter
+  before={[
+    "Grant applications reviewed manually, outcomes tracked in spreadsheets across multiple programs",
+    "AI policy developments monitored through newsletters and manual document review across jurisdictions",
+    "Grantee due diligence relies on ad hoc web searches, missing reputational signals"
+  ]}
+  after={[
+    "Unified grant portfolio with application scoring, disbursement tracking, and outcome analytics",
+    "Automated AI policy tracker covering legislation, executive orders, and regulatory frameworks worldwide",
+    "NLP-powered due diligence pipeline that flags reputational risks before grants are awarded"
+  ]}
+/>
+
+## What We'd Build
+
+### Grant Portfolio Intelligence
+
+The centerpiece. FLI manages grants across multiple programs — AI safety research, public engagement, and institutional support — with individual awards ranging from $100,000 to $5 million. A unified grant intelligence platform would connect every stage of the grantmaking lifecycle: intake, evaluation, disbursement, and impact measurement. Application scoring would use NLP to assess alignment with FLI's safety priorities, flag overlap with existing portfolio organizations, and surface relevant prior grantees working in the same space. On the backend, outcome tracking would aggregate signals from grantee publications, policy citations, media mentions, and self-reported milestones — giving FLI a quantitative view of which investments are producing results. This is especially critical for the org incubation pipeline, where FLI needs to track whether newly launched organizations are gaining traction or stalling.
+
+### AI Policy Monitoring System
+
+FLI's advocacy work depends on staying current across a fast-moving regulatory landscape. The EU AI Act, U.S. AI Safety Institute developments, UK framework proposals, and emerging governance efforts in dozens of countries all need tracking. A policy monitoring system would ingest legislative databases, government gazette feeds, parliamentary records, and regulatory agency publications — then classify each development by jurisdiction, policy area (compute governance, licensing requirements, safety standards, liability frameworks), and relevance to FLI's positions. The system would alert FLI's policy team when new proposals surface, track amendments through committee stages, and maintain a living map of global AI governance. This turns FLI from reactive — learning about developments through media coverage days later — to proactive, with real-time intelligence informing their lobbying and public advocacy.
+
+### Grantee Due Diligence Pipeline
+
+The Nya Dagbladet incident demonstrated that manual vetting has blind spots. An automated due diligence pipeline would screen grant applicants and their affiliated organizations against public records, media archives, sanctions lists, and reputational signals. For each applicant, the system would generate a risk profile covering organizational history, leadership affiliations, media sentiment, ideological positioning, and any red flags in public filings. This doesn't replace human judgment — FLI's team makes the final call — but it ensures that known risks surface before a grant offer is extended, not after. The pipeline would also monitor existing grantees on an ongoing basis, flagging if a funded organization's public profile changes in ways that could create reputational exposure for FLI.
+
+### Ecosystem Mapping Dashboard
+
+FLI operates at the hub of the AI safety ecosystem. They fund dozens of organizations, influence policymakers in Washington and London, and incubate new nonprofits. But the relationships between these actors — who funds whom, who cites whose research, who testifies before which committees, who collaborates on which papers — are not systematically mapped. An ecosystem dashboard would visualize the full network of AI safety organizations, funders, researchers, and policymakers, with FLI's position and influence clearly visible. This supports both strategic planning (where are the gaps in the ecosystem?) and fundraising (demonstrating FLI's outsized influence relative to budget to donors like Musk and Buterin).
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Grant Portfolio Intelligence", timeline: "Month 1-3", status: "proposed" },
+    { name: "AI Policy Monitoring System", timeline: "Month 3-6", status: "proposed" },
+    { name: "Due Diligence Pipeline", timeline: "Month 6-8", status: "proposed" },
+    { name: "Ecosystem Mapping Dashboard", timeline: "Month 8-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["Grant Analytics", "Policy Tracking", "NLP", "Due Diligence", "Ecosystem Mapping"]} />
+
+<SourceList
+  sources={[
+    { title: "FLI 2024 Grants Program", url: "https://futureoflife.org/grant-program/2024-grants/" },
+    { title: "FLI on ProPublica Nonprofit Explorer", url: "https://projects.propublica.org/nonprofits/organizations/471052538" },
+    { title: "FLI Newsletter Archives", url: "https://futureoflife.org/newsletter/" }
+  ]}
+/>

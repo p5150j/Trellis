@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 const footerLinks = [
+  { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
-  { name: "Field Notes", href: "/field-notes" },
+  { name: "Build Log", href: "/field-notes" },
   { name: "Research", href: "/research" },
 ];
 
@@ -14,11 +15,10 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="text-xl font-semibold tracking-tight">
-              Trellis
+              arus <span className="text-muted-foreground font-normal">impact</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Supporting communities through research-driven insights and
-              collaborative solutions.
+              AI/ML infrastructure for nonprofits doing real impact work
             </p>
           </div>
 
@@ -47,21 +47,21 @@ export function Footer() {
               Connect
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Get in touch to learn more about our work and how we can
-              collaborate.
+              Building something that matters? Let&apos;s talk about what AI/ML
+              infrastructure could do for your org.
             </p>
             <a
-              href="mailto:hello@trellis.org"
+              href="mailto:patrick.ortell@arus.io"
               className="inline-block mt-4 text-sm text-primary hover:underline"
             >
-              hello@trellis.org
+              patrick.ortell@arus.io
             </a>
           </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-border/40">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Trellis. All rights reserved.
+            &copy; {new Date().getFullYear()} arus. All rights reserved.
           </p>
         </div>
       </div>

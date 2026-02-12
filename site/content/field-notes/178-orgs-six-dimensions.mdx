@@ -1,0 +1,45 @@
+---
+title: "The Trellis Framework"
+description: "Why we built a three-layer approach to nonprofit infrastructure — understand what's broken, wire the systems together, then layer AI/ML on top."
+date: "2025-01-15"
+author: "Patrick Ortell"
+---
+
+Before scoping a single project, I wrote three documents. Not pitch decks — architecture docs. The kind you write when you're trying to understand a problem space deeply enough to build in it.
+
+The result was the Trellis framework: a three-layer model for how AI/ML infrastructure should be built in mission-driven organizations. It's the operating thesis behind every project on this site.
+
+## Layer 1: The Broken Landscape
+
+The first doc was a brutally honest map of how small-to-mid nonprofits ($500K–$5M budget) actually operate. Not how they should operate. How they do.
+
+The picture is grim. A typical 30-person nonprofit runs on a patchwork of disconnected systems — a donor CRM that doesn't talk to their accounting software, a case management tool that doesn't connect to their outcomes reporting, grant compliance tracked in spreadsheets, payroll allocated across programs by hand. Staff aren't doing mission work — they're being the integration layer between systems that should be talking to each other automatically.
+
+The cycle is always the same: funding comes in → compliance and security consume bandwidth → program delivery happens despite the infrastructure → back to fundraising → repeat. At every stage, the tech is working against them.
+
+The key insight from this mapping exercise: **nonprofits don't have a technology problem. They have a wiring problem.** The tools exist. QuickBooks works. Bloomerang works. Apricot works. What doesn't work is the space between them.
+
+## Layer 2: The Wiring
+
+The second doc is the solution architecture. Not replacing any existing tool — building the connective tissue between all of them.
+
+A middleware layer that intercepts events from each system, transforms data into a common model, and pushes it where it needs to go. Data entered once propagates everywhere automatically. A donation in Stripe triggers a receipt, codes the transaction in QuickBooks to the right fund, updates the donor record in the CRM, and deducts from the relevant grant budget — all without a human touching it.
+
+This is the infrastructure layer that has to exist before anything intelligent can be built on top. AI without clean, connected data is just a hallucination engine.
+
+## Layer 3: The AI/ML Sugar
+
+The third doc is where it gets interesting. Once the data is clean, connected, and flowing through a unified model, you can layer AI/ML capabilities on top:
+
+- **Intake automation** — AI-powered client intake that matches people to programs, handles multilingual input, and routes cases to the right staff
+- **Donor intelligence** — predictive models for donor retention, lapsed donor reactivation, major gift identification
+- **Automated reporting** — grant reports that write themselves from connected outcome data instead of manual compilation
+- **Outcomes prediction** — models that identify which program participants are at risk of dropping out before it happens
+
+These aren't hypothetical features. Each one maps to a real workflow that a real nonprofit is currently doing by hand. The projects on this site are scoped from this framework — each one targets a specific layer for a specific organization.
+
+## Why This Matters
+
+Most AI consultancies start with layer 3. They want to build the sexy ML model. But without layers 1 and 2 — without understanding the broken landscape and wiring the data together — the model has nothing to learn from and nowhere to deliver its output.
+
+The Trellis framework forces the work to happen in the right order: understand, wire, then automate. It's slower. It's less flashy. But it's how infrastructure actually gets built.

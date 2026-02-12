@@ -1,0 +1,103 @@
+---
+title: "Open Licensing Intelligence"
+partner: "Creative Commons"
+stage: "proposal"
+description: "License detection crawlers, commons health analytics, and AI training data transparency tools for the open knowledge ecosystem"
+tags: ["NLP", "Web Crawling", "Data Analytics", "Open Source"]
+score: 80.0
+website: "https://creativecommons.org"
+founded: "2001"
+location: "Mountain View, CA"
+headcount: "30-50"
+funding: "Foundation supported"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+Creative Commons spent 20+ years building the legal infrastructure for open knowledge sharing — their licenses now cover billions of works across the web. But CC faces a paradox: they define how open licensing works, yet they can barely measure the commons they created. They donated their most significant technical product, CC Search, to WordPress (now Openverse) in 2021, and with it went most of their engineering capacity. Today CC is a 30-50 person legal and policy organization running on Django and Vue.js for basic tooling — the CC Chooser, license deed pages, and a community site — while the data-intensive work lives at Openverse/Automattic. As AI training data becomes one of the most contested issues in tech, CC needs the technical muscle to match their legal authority.
+
+<OrgProfile
+  partner="Creative Commons"
+  website="https://creativecommons.org"
+  founded="2001"
+  location="Mountain View, CA"
+  headcount="30-50"
+  funding="Foundation supported"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 4,
+    tech_gap: 4,
+    impact: 4,
+    size: 3,
+    viability: 5,
+    growth: 4
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Years Active", value: "23+" },
+    { label: "2024 Revenue", value: "$5.13M" },
+    { label: "Fit Score", value: "80.0" }
+  ]}
+/>
+
+## The Problem Today
+
+CC knows their licenses cover billions of works, but they can't tell you how many, where, or in what domains. After donating CC Search and its data pipeline infrastructure (Python/Django, Elasticsearch, Airflow crawling Common Crawl data) to WordPress, CC lost the engineering capability to measure the commons at scale. Their remaining tech team — likely 2-5 engineers maintaining the Chooser (Vue.js), license deeds (Django), and community site (Lektor) — doesn't have the data engineering or ML capacity for web-scale crawling and analysis.
+
+Meanwhile, AI companies train on CC-licensed content without proper attribution, and there's no standardized way to detect CC licenses across datasets, verify compliance, or even declare licensing terms in machine-readable formats. CC's 2025-2028 strategic plan calls for "resilient open infrastructure" and creator agency — but the tools to deliver on those goals don't exist yet.
+
+<BeforeAfter
+  before={[
+    "No way to measure commons size, growth, or health since CC Search was donated to WordPress",
+    "CC licenses in AI training datasets detected only through manual spot-checks",
+    "License metadata across the web is inconsistent, incomplete, and not machine-readable"
+  ]}
+  after={[
+    "Commons health dashboard tracking CC-licensed works by license type, domain, language, and geography",
+    "Automated license detection across datasets and web content using NLP + metadata analysis",
+    "Machine-readable licensing tools and validators enabling AI training data transparency"
+  ]}
+/>
+
+## What We'd Build
+
+### CC License Crawler & Commons Health Dashboard
+
+The highest-impact build. A pipeline that processes Common Crawl data to detect CC licenses across web pages — combining regex pattern matching for standard license declarations with NLP for non-standard attributions ("shared under creative commons," license badges in alt text, footer mentions). The crawler builds a longitudinal dataset of commons health metrics: total CC-licensed works by license type (BY, BY-SA, BY-NC, etc.), by domain (academic, media, government, user-generated), by language, and by geography. An analytics dashboard makes these trends visible — showing where the commons is growing, where it's shrinking, and what the adoption curves look like over time. This directly serves CC's 2025-2028 strategic plan goal of resilient open infrastructure.
+
+### AI Training Data License Auditor
+
+A tool that takes a dataset manifest — a Hugging Face dataset card, LAION index, or custom data catalog — and cross-references it against known CC-licensed content to identify licensing compliance issues. For each entry, the auditor checks: is this CC-licensed? Which license? Does the dataset's usage comply with the license terms? Is proper attribution included? The output is a compliance report that AI developers can use for responsible data sourcing and that CC can use for advocacy — showing exactly how CC-licensed content flows into AI training at scale.
+
+### Machine-Readable License Metadata Tooling
+
+Standards-focused tools that help content platforms embed CC license metadata in formats that AI systems and crawlers can parse — schema.org markup, Dublin Core headers, and TDM (Text and Data Mining) reservation protocols. Includes a validator that checks whether a page's CC license metadata is correctly structured, and a reference implementation showing how major CMSs (WordPress, Drupal, Ghost) should declare licensing. This is the plumbing that makes the license auditor above possible across the broader web, and it feeds directly into CC's open science work on preprint licensing (CC BY) funded by Gates Foundation through 2026.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "License Crawler & Detection", timeline: "Month 1-3", status: "proposed" },
+    { name: "Commons Health Dashboard", timeline: "Month 3-5", status: "proposed" },
+    { name: "Training Data Auditor", timeline: "Month 5-8", status: "proposed" },
+    { name: "Metadata Tooling & Validators", timeline: "Month 8-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["NLP", "Web Crawling", "Data Analytics", "Open Source", "AI Licensing"]} />
+
+<SourceList
+  sources={[
+    { title: "CC Annual Report 2024", url: "https://creativecommons.org/wp-content/uploads/2025/03/2024-Creative-Commons-Annual-Report-1.pdf" },
+    { title: "CC Program Areas", url: "https://creativecommons.org/about/program-areas/" },
+    { title: "What We Built Together in 2025", url: "https://creativecommons.org/2025/12/19/what-we-built-together-in-2025/" }
+  ]}
+/>

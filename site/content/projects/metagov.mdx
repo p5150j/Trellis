@@ -1,0 +1,103 @@
+---
+title: "Governance Knowledge Infrastructure"
+partner: "Metagov"
+stage: "proposal"
+description: "NLP-powered Govbase automation, deliberation analysis pipelines, and governance health analytics for the digital governance research ecosystem"
+tags: ["NLP", "Knowledge Graphs", "Governance Analytics", "Research"]
+score: 81.2
+website: "https://metagov.org"
+founded: "2020"
+location: "Pittsburgh, PA"
+headcount: "Unknown"
+funding: "NSF, Ethereum Foundation, Filecoin funded"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+Metagov is building the research infrastructure for digital governance — how online communities, DAOs, and platforms make collective decisions. Their tools are ambitious: the Metagov Gateway provides API middleware for pluggable governance services, PolicyKit lets communities write governance procedures as code (published at USENIX Security 2020), and CommunityRule offers visual governance design. But their most unique asset is Govbase — a hand-curated database tracking 500+ governance projects, from DAOs managing billions in assets to platform moderation systems. The team is a distributed research collective led by academics at Oxford, CU Boulder, and UW, funded by a $750K NSF grant (2024) plus Ethereum Foundation, Filecoin, and Gitcoin. They have zero ML capability, and Govbase — their most valuable dataset — is maintained entirely by hand in Airtable.
+
+<OrgProfile
+  partner="Metagov"
+  website="https://metagov.org"
+  founded="2020"
+  location="Pittsburgh, PA"
+  headcount="Unknown"
+  funding="NSF, Ethereum Foundation, Filecoin funded"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 3,
+    size: 4,
+    viability: 4,
+    growth: 4
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "NSF Grant (2024)", value: "$750K" },
+    { label: "Govbase Projects", value: "500+" },
+    { label: "Fit Score", value: "81.2" }
+  ]}
+/>
+
+## The Problem Today
+
+Govbase is governance research gold — but it's an Airtable spreadsheet maintained by hand. Researchers manually discover governance projects, categorize them by type (DAO, platform cooperative, moderation council), document their decision-making mechanisms, and track their evolution. No automated crawling, no NLP-based categorization, no entity resolution to deduplicate entries across sources. Meanwhile, governance deliberation — the actual discussions in forums, Discord servers, Discourse threads, and Snapshot proposals — generates enormous amounts of text that nobody analyzes computationally. Metagov's researchers do qualitative case studies when they could be running NLP pipelines across thousands of governance discussions simultaneously.
+
+The core tools (Gateway in Python/Django, PolicyKit, CommunityRule in JavaScript) are research prototypes with limited production adoption. The Grant Innovation Lab tracks Web3 grants ecosystem data manually. The team is mostly academics — Josh Tan (Oxford, category theory), Nathan Schneider (CU Boulder, media studies), Amy Zhang (UW, CS) — with deep governance domain expertise but no dedicated engineering staff.
+
+<BeforeAfter
+  before={[
+    "Govbase maintained by hand in Airtable — 500+ entries, all manually discovered and categorized",
+    "Governance deliberation analyzed through qualitative case studies, one community at a time",
+    "DAO voting patterns studied manually with no cross-DAO comparison tooling"
+  ]}
+  after={[
+    "Automated Govbase pipeline crawling, classifying, and linking governance projects across the web",
+    "NLP deliberation analysis extracting argument structure and consensus patterns at scale",
+    "Governance health dashboard comparing participation, power distribution, and outcomes across DAOs"
+  ]}
+/>
+
+## What We'd Build
+
+### Govbase Knowledge Graph & Automation
+
+Transform Govbase from a manually-maintained Airtable into an automated knowledge graph. A web crawler discovers governance projects across DAO forums, governance platforms (Tally, Snapshot, Aragon), academic publications, and community directories. NLP classifiers automatically categorize each project by governance type, decision-making mechanism, and community size. Entity resolution deduplicates entries and links related projects across platforms — connecting a DAO's Snapshot votes to its Discourse deliberations to its GitHub commits. Semantic embeddings enable natural-language search: "show me DAOs using quadratic voting with over 1000 members." The system feeds new discoveries back to researchers for validation, keeping humans in the loop while eliminating the manual discovery bottleneck.
+
+### Deliberation Analysis Pipeline
+
+An NLP pipeline that ingests governance discussions from Discourse forums, Discord governance channels, Snapshot proposal comments, and DAO-specific platforms. Argument mining extracts the structure of deliberation — identifying proposals, objections, counterarguments, and supporting evidence. Sentiment and polarization tracking shows how consensus forms (or fractures) over time within a discussion. The output is a quantitative toolkit that turns Metagov's qualitative governance research into reproducible, computational science. This directly supports their PolicyKit research by providing the data layer that shows whether governance procedures actually produce better deliberation outcomes.
+
+### Governance Health Analytics
+
+A dashboard aggregating on-chain and off-chain governance activity across DAOs. Participation rates over time, voter power distribution (Gini coefficient of token-weighted voting), proposal velocity, quorum achievement rates, and voter fatigue patterns. Cross-DAO comparison lets researchers benchmark governance health — is MakerDAO's participation declining faster than Uniswap's? Do DAOs that adopt quadratic voting see higher engagement? This is the quantitative evidence layer that Metagov's crypto funders (Ethereum Foundation, Filecoin, Gitcoin) are actively seeking, and it builds directly on the Grant Innovation Lab's existing ecosystem research.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Govbase Automation Pipeline", timeline: "Month 1-3", status: "proposed" },
+    { name: "Knowledge Graph & Search", timeline: "Month 3-5", status: "proposed" },
+    { name: "Deliberation NLP Pipeline", timeline: "Month 5-8", status: "proposed" },
+    { name: "Governance Health Dashboard", timeline: "Month 8-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["NLP", "Knowledge Graphs", "Governance Analytics", "Research", "DAO"]} />
+
+<SourceList
+  sources={[
+    { title: "Metagov 2024 Year in Review", url: "https://metagov.substack.com/p/metagovs-2024-year-in-review" },
+    { title: "Metagov Open Collective", url: "https://opencollective.com/metagov" },
+    { title: "PolicyKit (USENIX 2020)", url: "https://metagov.org/" }
+  ]}
+/>

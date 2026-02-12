@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * TRELLIS DESIGN SYSTEM
+ * ARUS DESIGN SYSTEM
  *
  * Aesthetic: Clean, minimal, sophisticated
  * Inspired by: Modern research/tech sites with warm, approachable feel
@@ -190,11 +190,11 @@
 @layer components {
   /* Refined container */
   .container-narrow {
-    @apply max-w-3xl mx-auto px-4 sm:px-6;
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .container-wide {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12;
   }
 
   /* Section spacing */

@@ -1,0 +1,107 @@
+---
+title: "Coalition Impact Analytics"
+partner: "Dream.org"
+stage: "proposal"
+description: "Program outcome tracking, cross-pillar impact analytics, and policy monitoring for criminal justice and climate justice coalitions"
+tags: ["Data Pipelines", "Impact Analytics", "NLP", "GIS"]
+score: 75.0
+website: "https://dream.org"
+founded: "2014"
+location: "Oakland, CA"
+headcount: "30-50"
+funding: "Foundation and donor funded"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+Dream.org, founded by Van Jones, builds bipartisan coalitions that bridge criminal justice reform and the green economy. Their biggest win — the FIRST STEP Act (2018) — was championed by Van Jones and Jared Kushner together, signed by Trump, and became the most significant federal criminal justice reform in a generation. Today Dream.org operates across two pillars: justice programs (Innovation Prize, Justice Fellowships, Justice Next Cohort with the NBA Foundation, bail fund work with Chan Zuckerberg Initiative) and climate economy programs (600+ green career scholarships, the Transformative Communities Program in 25 disadvantaged communities, Dream Climate Tech Launchpad for Black and Latinx innovators, and a Business Council Fellowship funded by Google.Org). They recently partnered with Fifty One AI on AI tools for social justice — a clear signal that they recognize their tech gap. What they need alongside that partnership is the data infrastructure that connects outcomes across their programs and demonstrates to Ford Foundation, Google.Org, and NBA Foundation that the coalition model actually works.
+
+<OrgProfile
+  partner="Dream.org"
+  website="https://dream.org"
+  founded="2014"
+  location="Oakland, CA"
+  headcount="30-50"
+  funding="Foundation and donor funded"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 4,
+    tech_gap: 4,
+    impact: 4,
+    size: 4,
+    viability: 3,
+    growth: 3
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Scholarships", value: "600+" },
+    { label: "Communities", value: "25" },
+    { label: "Fit Score", value: "75.0" }
+  ]}
+/>
+
+## The Problem Today
+
+Dream.org runs a constellation of programs generating real data — 600+ scholarship recipients (20% justice-impacted), multiple justice cohorts, 10 Business Council Fellows at $20K each, 25 communities in the Transformative Communities Program, and a climate tech launchpad for entrepreneurs. But outcomes tracking is fragmented: the justice team tracks their cohort separately from the scholarship team, neither connects to the Transformative Communities geospatial data, and nobody can answer the question that matters most to funders — "what happens to a justice-impacted person who gets a green career scholarship, completes training, and enters the clean energy workforce in one of your 25 communities?"
+
+That cross-program impact story is Dream.org's unique differentiator. No other organization bridges criminal justice and climate economy this way. But they can't tell that story with data because the data lives in separate spreadsheets, program reports, and CRM records with no unified view. Their 2024 Impact Report counts outputs (scholarships awarded, communities served) but struggles to show outcomes (employment rates, wage increases, recidivism reduction, business survival rates).
+
+<BeforeAfter
+  before={[
+    "600+ scholarship recipients tracked in spreadsheets with no employment outcome data",
+    "Justice and climate programs report separately — no cross-pillar impact analysis",
+    "25 Transformative Communities tracked manually with no geospatial analytics"
+  ]}
+  after={[
+    "Unified outcome tracking following participants from application through training through employment",
+    "Cross-program analytics showing how justice-impacted individuals move into green economy careers",
+    "Community-level impact mapping connecting federal climate funding to local economic outcomes"
+  ]}
+/>
+
+## What We'd Build
+
+### Program Outcome Tracking Pipeline
+
+The foundation layer. A unified data system that connects all Dream.org's program participants across pillars — scholarship recipients, justice cohort members, fellows, and launchpad entrepreneurs — into a single longitudinal tracking system. The pipeline ingests: application data, training completion records, employment placement data, wage and retention surveys, and (for justice programs) recidivism data from public court records. For the 600+ scholarship recipients, this means moving from "we awarded the scholarship" to "we know that 18 months later, 73% are employed in clean energy, earning an average of X." For justice cohorts, it means tracking reentry outcomes systematically. The system handles the cross-pillar connection that makes Dream.org unique: when a scholarship recipient is also justice-impacted, both programs can see the full journey.
+
+### Cross-Program Impact Dashboard
+
+The analytics layer that turns Dream.org's output metrics into outcome metrics — and gives Ford Foundation, Google.Org, and NBA Foundation the data they're asking for. Dashboards show: scholarship-to-employment conversion rates by program and demographic, justice cohort reentry outcomes, Transformative Communities economic indicators, and the critical crossover metrics (how many justice-impacted participants entered green economy careers). Automated funder reporting generates tailored views for each major funder, pulling from the unified data layer. Trend analysis over cohorts reveals what's working: are longer training programs producing better outcomes? Do certain community contexts drive higher placement rates?
+
+### Community-Level Impact Mapping
+
+For the Transformative Communities Program operating across 25 disadvantaged communities, a geospatial analytics layer that maps federal climate funding accessed, minority-owned green businesses created, jobs generated, and community economic indicators at the neighborhood level. The system ingests federal grant databases (grants.gov, USASPENDING), business formation data, and employment statistics, overlaying them on Dream.org's community footprints. Interactive maps show funders and policymakers exactly where the investment is landing and what it's producing — turning "we work in 25 communities" into "here's the economic transformation in each one."
+
+### Policy Win Monitor
+
+An NLP pipeline that tracks criminal justice and climate legislation at state and federal levels — monitoring bill introductions, committee actions, floor votes, and signing ceremonies across all 50 states. The system classifies each legislative action against Dream.org's advocacy priorities and generates a running scoreboard of policy wins. This automates the manual policy tracking that currently happens through staff awareness and news monitoring, and provides the systematic evidence base for Dream.org's bipartisan advocacy model.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Outcome Tracking Pipeline", timeline: "Month 1-3", status: "proposed" },
+    { name: "Cross-Program Impact Dashboard", timeline: "Month 3-6", status: "proposed" },
+    { name: "Community Impact Mapping", timeline: "Month 6-9", status: "proposed" },
+    { name: "Policy Win Monitor", timeline: "Month 9-12", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["Data Pipelines", "Impact Analytics", "NLP", "GIS", "Coalition Building"]} />
+
+<SourceList
+  sources={[
+    { title: "Dream.org 2024 Impact Report", url: "https://dream.org/wp-content/uploads/2024/12/2024-Dream.Org-Impact-Report.pdf" },
+    { title: "Dream.org & Fifty One AI Partnership", url: "https://dream.org/news-articles/dream-org-and-fifty-one-ai-partnership/" },
+    { title: "Dream.org Programs", url: "https://dream.org/" }
+  ]}
+/>

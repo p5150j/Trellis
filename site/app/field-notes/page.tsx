@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/mdx";
 
 export const metadata: Metadata = {
-  title: "Field Notes",
+  title: "Build Log",
   description:
-    "Observations, insights, and learnings from our work in the field.",
+    "What we're building, what we're learning, and what's shipping.",
 };
 
 export default function FieldNotesPage() {
@@ -17,12 +17,13 @@ export default function FieldNotesPage() {
       <section className="section border-b border-border/40">
         <div className="container-wide">
           <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">
-            Insights
+            Build Log
           </p>
-          <h1>Field Notes</h1>
+          <h1>Build Log</h1>
           <p className="mt-4 text-sm text-muted-foreground max-w-xl">
-            Observations, insights, and learnings from our work in the field.
-            These notes capture our experiences as we partner with communities.
+            What we&apos;re building, what we&apos;re learning, and what&apos;s
+            shipping. Notes from the process of building AI/ML infrastructure
+            for nonprofits.
           </p>
         </div>
       </section>

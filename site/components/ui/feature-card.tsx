@@ -5,6 +5,7 @@ interface FeatureCardProps {
   title?: string;
   description?: string;
   cta?: string;
+  ctaHref?: string;
   children?: React.ReactNode;
   className?: string;
   variant?: "light" | "coral" | "spectrum";
@@ -15,6 +16,7 @@ export function FeatureCard({
   title,
   description,
   cta,
+  ctaHref,
   children,
   className,
   variant = "light",
@@ -67,17 +69,17 @@ export function FeatureCard({
           <p className={cn("text-xs", mutedColor)}>{description}</p>
         )}
         {cta && (
-          <button className={cn(
-            "mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium transition-colors",
+          <a href={ctaHref || "/projects"} className={cn(
+            "mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium transition-colors no-underline",
             variant === "light"
               ? "bg-primary text-primary-foreground hover:bg-primary/90"
               : "bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm"
           )}>
             {cta}
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </button>
+          </a>
         )}
       </div>
     </div>
@@ -111,6 +113,19 @@ export function StatCard({
         `,
       }}
     >
+      {/* Abstract data viz — full bleed */}
+      <svg viewBox="0 0 400 400" className="absolute inset-0 w-full h-full opacity-[0.1] pointer-events-none" fill="none" preserveAspectRatio="xMidYMid slice">
+        <circle cx="60" cy="80" r="90" stroke="white" strokeWidth="0.75" />
+        <circle cx="60" cy="80" r="130" stroke="white" strokeWidth="0.5" />
+        <circle cx="340" cy="340" r="110" stroke="white" strokeWidth="0.75" />
+        <circle cx="340" cy="340" r="160" stroke="white" strokeWidth="0.5" />
+        <line x1="0" y1="350" x2="400" y2="100" stroke="white" strokeWidth="0.75" />
+        <line x1="0" y1="380" x2="400" y2="160" stroke="white" strokeWidth="0.5" />
+        {[0,1,2,3,4,5,6,7,8].map(i => (
+          <circle key={i} cx={40 + i * 45} cy={350 - i * 28} r={3 + i * 0.8} fill="white" opacity={0.15 + i * 0.04} />
+        ))}
+      </svg>
+
       {/* Number badge */}
       {number && (
         <div className="absolute top-5 left-5 z-10">
@@ -128,11 +143,11 @@ export function StatCard({
           </span>
           <p className="text-xs text-white/70 mt-2 max-w-[200px]">{label}</p>
         </div>
-        <div className="mb-2">
+        <a href="/projects" className="mb-2 block hover:opacity-80 transition-opacity">
           <svg className="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
           </svg>
-        </div>
+        </a>
       </div>
     </div>
   );
@@ -170,6 +185,16 @@ export function ListCard({
           )`,
         }}
       />
+
+      {/* Abstract geometric shapes — full bleed */}
+      <svg viewBox="0 0 400 400" className="absolute inset-0 w-full h-full opacity-[0.12] pointer-events-none" fill="none" preserveAspectRatio="xMidYMid slice">
+        <rect x="-20" y="20" width="140" height="140" rx="8" stroke="white" strokeWidth="1" transform="rotate(15 50 90)" />
+        <rect x="220" y="-30" width="180" height="180" rx="8" stroke="white" strokeWidth="1" transform="rotate(-12 310 60)" />
+        <polygon points="160,250 230,380 90,380" stroke="white" strokeWidth="1" />
+        <circle cx="340" cy="320" r="80" stroke="white" strokeWidth="1" />
+        <rect x="280" y="180" width="90" height="90" rx="6" stroke="white" strokeWidth="0.75" transform="rotate(25 325 225)" />
+        <circle cx="100" cy="180" r="30" stroke="white" strokeWidth="0.75" />
+      </svg>
 
       {/* Number badge */}
       {number && (

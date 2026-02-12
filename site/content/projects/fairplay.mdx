@@ -1,0 +1,102 @@
+---
+title: "Children's Tech Accountability Tools"
+partner: "Fairplay"
+stage: "proposal"
+description: "Automated dark pattern detection, platform policy monitoring, and COPPA compliance scanning for children's digital rights advocacy"
+tags: ["Computer Vision", "NLP", "Platform Monitoring", "Advocacy"]
+score: 72.5
+website: "https://fairplayforkids.org"
+founded: "2000"
+location: "Boston, MA"
+headcount: "Unknown"
+funding: "Foundation funded"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+Fairplay (formerly Campaign for a Commercial-Free Childhood) has spent 25 years standing between children and the companies that exploit them — from forcing Disney to refund fraudulent "Baby Einstein" DVDs to helping pass the Kids Online Safety Act 91-3 in the Senate. Their recent campaigns have shut down Instagram Kids, filed FTC complaints against Meta with whistleblower testimony from a former Horizon Worlds marketing director, and organized 150+ child development experts to warn against AI toys. Led by Executive Director Josh Golin out of Boston, they are the leading independent voice on children's digital rights. But their evidence-gathering is entirely manual — staff individually test apps, screenshot dark patterns, compile FTC complaint packages by hand — and they have zero engineering capacity to scale this work.
+
+<OrgProfile
+  partner="Fairplay"
+  website="https://fairplayforkids.org"
+  founded="2000"
+  location="Boston, MA"
+  headcount="Unknown"
+  funding="Foundation funded"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 3,
+    tech_gap: 4,
+    impact: 4,
+    size: 3,
+    viability: 4,
+    growth: 4
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Years Active", value: "25+" },
+    { label: "KOSA Vote", value: "91-3" },
+    { label: "Fit Score", value: "72.5" }
+  ]}
+/>
+
+## The Problem Today
+
+When Fairplay investigates a platform for harming children, a researcher downloads the app, creates a test account, and manually navigates through every screen looking for dark patterns — loot boxes, infinite scroll, notification pressure, age-gate bypasses, data collection prompts that violate COPPA. They screenshot everything. They write up findings in a Word document. They compile evidence packages for FTC filings that can take months of manual documentation. For their YouTube eating disorder research, they created teen-profile accounts and manually logged every video the algorithm recommended. For the "Buying to Belong" report, they manually audited marketing practices across platforms.
+
+This methodology works — Fairplay's evidence packages are credible enough to trigger Congressional action and FTC investigations. But it doesn't scale. There are hundreds of children's apps and dozens of major platforms, and Fairplay can only audit a handful per year. Every time TikTok, Roblox, or YouTube quietly changes a feature or policy, it goes undetected until a researcher happens to notice. And their advocacy impact — did Instagram actually change its behavior after the campaign? — is tracked anecdotally rather than systematically.
+
+<BeforeAfter
+  before={[
+    "Manual app auditing — researchers individually download, navigate, and screenshot dark patterns",
+    "FTC evidence packages assembled by hand over months from screenshots and narrative writeups",
+    "Platform policy changes go undetected until a staffer happens to notice"
+  ]}
+  after={[
+    "Automated dark pattern scanner flagging manipulative design across children's apps at scale",
+    "Evidence pipeline generating structured, timestamped documentation ready for regulatory filings",
+    "NLP-powered monitoring of platform Terms of Service and privacy policy changes"
+  ]}
+/>
+
+## What We'd Build
+
+### Dark Pattern Detection Scanner
+
+The centerpiece — and the build that could transform Fairplay's research methodology. An automated tool that navigates children's apps and websites, screenshots UI flows, and uses computer vision to flag known dark pattern categories: loot boxes and randomized reward mechanics, countdown timers and urgency pressure, infinite scroll without stopping cues, manipulative consent dialogs, age-gate bypass opportunities, and notification permission prompts designed to exploit children. The system builds a structured evidence database — timestamped screenshots, UI element classifications, and pattern frequencies — that directly feeds FTC complaint packages. Instead of one researcher auditing one app over weeks, the scanner provides a first-pass audit of dozens of apps, with researchers focusing human judgment on the most concerning findings.
+
+### Platform Policy Monitor
+
+An NLP pipeline that continuously tracks Terms of Service, privacy policies, and community guidelines across major children's platforms — Roblox, YouTube Kids, TikTok, Instagram, Snapchat, Discord. When a platform quietly edits its ToS to change data collection practices or loosens age restrictions, the system detects the change, classifies its impact category (privacy, safety, advertising, age-gating), and alerts the Fairplay team. A diff-based interface shows exactly what changed and when. Historical tracking creates a documented record of every policy revision — invaluable for demonstrating patterns of platform behavior in advocacy contexts.
+
+### Advocacy Impact Dashboard
+
+The missing feedback loop. After Fairplay runs a campaign — say, pushing Instagram to remove specific features targeting teens — the dashboard tracks whether the platform actually changed its behavior. The system monitors: feature launches and removals on targeted platforms, policy language changes, app update release notes, and media coverage sentiment. Correlated with Fairplay's campaign timeline, this turns "we believe our advocacy made a difference" into "here is the documented evidence of platform behavior change following our intervention." This is critical for funder reporting and for demonstrating the ROI of advocacy investment.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Dark Pattern Scanner v1", timeline: "Month 1-4", status: "proposed" },
+    { name: "Platform Policy Monitor", timeline: "Month 4-7", status: "proposed" },
+    { name: "Advocacy Impact Dashboard", timeline: "Month 7-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["Computer Vision", "NLP", "Platform Monitoring", "Advocacy", "Children's Rights"]} />
+
+<SourceList
+  sources={[
+    { title: "Fairplay: Buying to Belong Report", url: "https://fairplayforkids.org/wp-content/uploads/2025/02/Buying-to-Belong.pdf" },
+    { title: "Fairplay: 25 Years of Protecting Kids", url: "https://fairplayforkids.org/wp-content/uploads/2025/11/25FP1003_report2025_6.pdf" },
+    { title: "AI Toys Warning Campaign", url: "https://www.ctpublic.org/2025-11-20/ahead-of-the-holidays-consumer-and-child-advocacy-groups-warn-against-ai-toys" }
+  ]}
+/>

@@ -5,7 +5,7 @@ import { getAllPosts } from "@/lib/mdx";
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "In-depth research publications and reports from our community-focused work.",
+    "Analysis and frameworks on AI/ML infrastructure for civil society organizations.",
 };
 
 export default function ResearchPage() {
@@ -21,8 +21,9 @@ export default function ResearchPage() {
           </p>
           <h1>Research</h1>
           <p className="mt-4 text-sm text-muted-foreground max-w-xl">
-            In-depth research publications and reports from our community-focused
-            work. Designed to inform practice and drive meaningful change.
+            Analysis and frameworks on where AI/ML infrastructure creates
+            outsized impact for civil society organizations. How we evaluate
+            fit, score opportunities, and identify the builds that matter.
           </p>
         </div>
       </section>
@@ -91,6 +92,18 @@ export default function ResearchPage() {
               ))}
             </div>
           )}
+
+          {/* More Coming Soon */}
+          <div className="mt-16 p-8 border border-border/40 rounded-xl bg-muted/30">
+            <p className="text-sm font-medium text-foreground">
+              More research coming soon
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-xl">
+              We&apos;re publishing additional analysis on the nonprofit tech
+              landscape, domain-specific AI/ML applications, and engagement
+              patterns from our first cohort of projects.
+            </p>
+          </div>
         </div>
       </section>
     </div>

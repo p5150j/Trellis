@@ -1,0 +1,107 @@
+---
+title: "Hate & Disinformation Research Pipeline"
+partner: "Center for Countering Digital Hate"
+stage: "proposal"
+description: "Automated content ingestion, NLP classification, and evidence archival replacing manual monitoring workflows"
+tags: ["NLP", "Content Classification", "Data Pipelines", "Research Automation"]
+score: 81.2
+website: "https://counterhate.com"
+founded: "2018"
+location: "Washington, DC / London"
+headcount: "20-40"
+funding: "Foundation supported"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+CCDH produces some of the most influential research on online hate and disinformation — their "Disinformation Dozen" report identified twelve people responsible for 65% of anti-vaccine misinformation on social media, driving platform policy changes worldwide. Their STAR Framework (Sunlight, Trust & safety, Accountability, Reform) structures advocacy that has shaped the EU Digital Services Act and UK Online Safety Bill. Backed by Open Society, Skoll, and Oak foundations with $2.3M in FY2023 revenue, they have the credibility and reach to turn research into real accountability. But their monitoring and analysis workflows are entirely manual — and their primary data source, CrowdTangle, was shut down by Meta in August 2024.
+
+<OrgProfile
+  partner="Center for Countering Digital Hate"
+  website="https://counterhate.com"
+  founded="2018"
+  location="Washington, DC / London"
+  headcount="20-40"
+  funding="Foundation supported"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 3,
+    size: 4,
+    viability: 4,
+    growth: 4
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "FY2023 Revenue", value: "$2.3M" },
+    { label: "Operations", value: "US + UK" },
+    { label: "Fit Score", value: "81.2" }
+  ]}
+/>
+
+## The Problem Today
+
+A typical CCDH report — like the "Disinformation Dozen" — requires researchers to manually monitor accounts across Facebook, Instagram, X/Twitter, YouTube, and TikTok. They screenshot content before it gets deleted, hand-code each post against a custom taxonomy (type of claim, target group, engagement metrics), tabulate results in Google Sheets, and produce a polished report weeks later. For their YouTube eating disorder research, they created teen-profile test accounts and manually documented what the algorithm served them. For the "Failure to Act" series, they flagged violating content and manually checked back to see if platforms removed it.
+
+Every step is manual, and it just got worse: CrowdTangle — Meta's research tool that was CCDH's primary pipeline for Facebook and Instagram data — was shut down in August 2024. Its replacement, Meta Content Library, has far more restrictions and requires technical integration skills CCDH doesn't have. Meanwhile, the X/Twitter API has been priced out of reach under new ownership. Their two biggest data sources are effectively gone.
+
+<BeforeAfter
+  before={[
+    "CrowdTangle (now dead) + manual platform browsing as primary data collection",
+    "Every post hand-coded in Google Sheets against custom taxonomies — 800+ posts per report",
+    "Manual screenshotting for evidence preservation before content deletion"
+  ]}
+  after={[
+    "Multi-platform ingestion pipeline pulling from YouTube API, Reddit, Bluesky, RSS, and Meta Content Library",
+    "NLP classifier trained on CCDH's existing coded datasets for automated first-pass categorization",
+    "Automated evidence archival with timestamps, metadata, and engagement snapshots"
+  ]}
+/>
+
+## What We'd Build
+
+### Multi-Platform Data Ingestion Pipeline
+
+The foundation that replaces CrowdTangle. An automated collection system that pulls from every available data source — YouTube Data API for video metadata and comments, Reddit API, Bluesky firehose, RSS feeds from known disinformation outlets, and Meta Content Library where accessible. Each platform adapter normalizes content into a unified schema: text, author, timestamp, engagement metrics, platform, and media attachments. The pipeline runs continuously, not just during business hours, so overnight campaign spikes don't get missed. Data flows into a structured database that replaces the current spreadsheet-per-report approach, making every piece of collected content queryable across all CCDH research projects.
+
+### NLP Content Classifier
+
+CCDH's hand-coded datasets are training data gold. Years of researchers manually categorizing posts by hate speech type, disinformation narrative, target group, and claim category means they have labeled datasets ready for supervised learning. A fine-tuned classifier (BERT-family or similar) trained on their existing taxonomies would do automated first-pass categorization — flagging probable hate speech by type, identifying known disinformation narratives, and routing edge cases to human reviewers. This turns weeks of manual coding into hours of human review on the 10-20% the model is uncertain about. The classifier improves over time as researchers correct its outputs, creating a flywheel that makes each subsequent report faster.
+
+### Evidence Archival & Enforcement Tracker
+
+Two critical capabilities in one system. First: when content is flagged, automatically archive the full post — screenshot, text, metadata, engagement metrics, author profile, and timestamp — before it can be deleted. This creates a legally defensible evidence chain that CCDH needs for policy testimony and potential legal proceedings. Second: after CCDH reports violating content to platforms, the system automatically checks back at configurable intervals (1 hour, 24 hours, 7 days, 30 days) to document whether the content was removed, labeled, or left up. This automates the "Failure to Act" methodology that currently requires researchers to manually revisit hundreds of flagged posts.
+
+### Emerging Narrative Detection
+
+A clustering and trend detection layer sitting on top of the ingestion pipeline. When a new hashtag, talking point, or coordinated narrative crosses a volume threshold, the system alerts the research team. Pattern detection identifies cross-platform coordination — the same narrative appearing on Telegram, then X, then YouTube within hours suggests a coordinated campaign rather than organic spread. This gives CCDH the ability to catch campaigns early and publish research while narratives are still emerging, compressing their report timeline from weeks to days.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Data Ingestion Pipeline", timeline: "Month 1-3", status: "proposed" },
+    { name: "NLP Content Classifier", timeline: "Month 3-6", status: "proposed" },
+    { name: "Evidence Archival System", timeline: "Month 6-8", status: "proposed" },
+    { name: "Narrative Detection Layer", timeline: "Month 8-12", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["NLP", "Content Classification", "Data Pipelines", "Research Automation", "Evidence Preservation"]} />
+
+<SourceList
+  sources={[
+    { title: "CCDH Research Reports", url: "https://counterhate.com/research/" },
+    { title: "CCDH STAR Framework", url: "https://counterhate.com/topic/star-framework/" },
+    { title: "CCDH 2024 Program Overview", url: "https://counterhate.com/wp-content/uploads/2024/06/GS-CCDH-Program-2024_for-web.pdf" }
+  ]}
+/>

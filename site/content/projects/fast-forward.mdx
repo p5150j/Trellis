@@ -1,0 +1,114 @@
+---
+title: "AI-Powered Portfolio Intelligence"
+partner: "Fast Forward"
+stage: "proposal"
+description: "Portfolio intelligence, accelerator pipeline AI, and ecosystem analytics for the leading tech nonprofit accelerator"
+tags: ["Portfolio Analytics", "NLP", "Recommendation Systems", "Impact Measurement"]
+score: 91.2
+website: "https://www.ffwd.org"
+founded: "2014"
+location: "San Francisco, CA"
+headcount: "Unknown"
+funding: "Major philanthropic backing including Ballmer Group, Google.org, HPE Foundation"
+date: "2025-02-10"
+featured: true
+---
+
+## The Opportunity
+
+Fast Forward is the only accelerator exclusively for tech nonprofits — a Y Combinator for social impact. Since 2014, they've accelerated over 100 organizations that have collectively raised more than $1B in follow-on funding and impacted 262 million lives. Their portfolio spans every issue area: AI-powered health tools, judicial accountability analytics, digital financial inclusion, climate monitoring, and dozens more. The 2025 cohort drew applications from 64 countries and admitted just 2.5%. They run the annual Startup Accelerator (with $25K+ unrestricted grants, mentorship, and a Demo Day pitch event), a Growth Platform supporting 100+ alumni with ongoing resources, a Tech Nonprofit Directory cataloging the ecosystem, and the AI for Humanity initiative — the sector's most comprehensive look at how nonprofits are actually using AI, produced with Google.org. This is the single highest-leverage partnership in our pipeline, because making Fast Forward smarter makes their entire 100-org ecosystem smarter.
+
+<OrgProfile
+  partner="Fast Forward"
+  website="https://www.ffwd.org"
+  founded="2014"
+  location="San Francisco, CA"
+  headcount="Unknown"
+  funding="Major philanthropic backing including Ballmer Group, Google.org, HPE Foundation"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 5,
+    size: 3,
+    viability: 5,
+    growth: 5
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Portfolio Orgs", value: "100+" },
+    { label: "Lives Impacted", value: "262M" },
+    { label: "Fit Score", value: "91.2" }
+  ]}
+/>
+
+## The Problem Today
+
+Fast Forward runs four distinct programs — the Startup Accelerator, the Growth Platform for alumni, the Tech Nonprofit Directory, and the AI for Humanity research initiative — and each one generates its own data in its own system. The Accelerator pipeline captures application data from hundreds of global applicants each year. The Growth Platform tracks engagement and milestones for 100+ alumni organizations. The Directory is a public-facing catalog of tech nonprofits. And the AI for Humanity Report — their flagship research collaboration with Google.org — surveys hundreds of nonprofits on AI adoption, producing findings like the 2025 report's discovery that 48% of nonprofits cite data privacy as a top AI challenge and 84% say more funding is their number-one need.
+
+But none of these systems talk to each other. Impact metrics get compiled manually once a year for the annual Impact Report. When the team needs to decide how to allocate support across 100+ portfolio organizations — or figure out which of the hundreds of AI-powered nonprofits they're now tracking need attention — they're piecing it together from CRM exports, directory listings, survey snapshots, and institutional memory. With 85% of their portfolio having proximate founders (people from the communities they serve), the nuance of who needs what kind of support is high. And with major backers like Ballmer Group ($4.5M in 2024-2025), Google.org, HPE Foundation, BlackRock, Bloomberg, Salesforce, and Okta all watching, the pressure to demonstrate portfolio-wide impact quantitatively is only increasing.
+
+<BeforeAfter
+  before={[
+    "Portfolio data scattered across Accelerator pipeline, Growth Platform, Directory, and annual surveys",
+    "Support allocation across 100+ orgs driven by institutional memory rather than data",
+    "AI for Humanity findings captured as annual report snapshots, not living datasets"
+  ]}
+  after={[
+    "Unified portfolio intelligence layer connecting all four program data streams",
+    "Data-driven prioritization showing which orgs need what kind of support and when",
+    "Living ecosystem dataset tracking AI adoption longitudinally across hundreds of nonprofits"
+  ]}
+/>
+
+## What We'd Build
+
+### Portfolio Intelligence Dashboard
+
+The centerpiece. Connect Fast Forward's CRM, Accelerator pipeline data, Growth Platform engagement metrics, Tech Nonprofit Directory listings, and AI for Humanity survey results into a single operational view. When a program manager sits down on Monday morning, they should see: which portfolio orgs hit milestones last month, which are showing signs of struggle (declining engagement, stalled fundraising, team turnover), and where the biggest gaps in current support allocation are. Replace the annual manual impact report process with continuous, data-informed portfolio monitoring.
+
+The system would surface patterns that are invisible today — like whether orgs that came through recent AI-focused cohorts show different growth trajectories than earlier cohorts, or which sectors in the portfolio are over-supported vs. under-supported relative to their stage. This is the tool that lets a small team manage a 100-org portfolio without drowning.
+
+### Accelerator Pipeline Intelligence
+
+With a 2.5% acceptance rate and applications flooding in from 64 countries, the annual cohort selection process is high-stakes and increasingly overwhelming. Build an AI-assisted screening layer that evaluates applications on the same dimensions Fast Forward already cares about — technical maturity, AI readiness, founder proximity to the problem, mission alignment — but does it consistently across hundreds of submissions.
+
+This isn't about replacing human judgment. It's about helping reviewers spend more time on the 30 borderline cases that actually need deep evaluation, and less time on the 200 that are clear decisions in either direction. The system would also flag trends across application cycles: are more orgs coming from health vs. climate this year? Is there a geographic shift in where tech nonprofits are emerging? Are certain technical approaches (LLMs vs. computer vision vs. data analytics) gaining or losing traction? This kind of meta-analysis feeds directly into Fast Forward's ecosystem intelligence role.
+
+### AI Adoption Ecosystem Tracker
+
+Fast Forward's AI for Humanity Report — produced with Google.org — is the sector's best data on how nonprofits actually use AI. The 2025 edition surveyed hundreds of nonprofits and found that data privacy, limited in-house expertise, and funding gaps are the top barriers to AI adoption. This is extraordinary data. But it's a snapshot, not a system.
+
+Turn this into a living, longitudinal dataset. Track how nonprofits adopt AI over time — what patterns lead to successful deployment, what resources make the difference, where the sector-wide gaps persist. Feed it continuously from the Directory, portfolio check-ins, and periodic lightweight surveys. This positions Fast Forward as the definitive quantitative voice on AI in the nonprofit sector — fueling their thought leadership, funder conversations, and the growing convening work they do with partners like the McGovern Foundation and Google.org around responsible AI deployment.
+
+### Smart Resource Matching
+
+Fast Forward connects portfolio orgs with mentors, funders, corporate partners, and peer organizations — from HPE Foundation campaigns supporting tech nonprofits to Salesforce partnerships focused on climate and education. Currently, matching the right resource to the right org at the right time is manual. Build a recommendation engine that pairs organizations with relevant mentors, funding opportunities, bootcamp sessions, and peer connections based on their stage, sector, technical stack, and current needs. Especially valuable for the Growth Platform, where 100+ alumni need ongoing but differentiated support — the org in year one of scaling AI-powered health tools needs very different resources than the org in year five with established distribution.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Portfolio Data Integration", timeline: "Month 1-3", status: "proposed" },
+    { name: "Intelligence Dashboard", timeline: "Month 3-5", status: "proposed" },
+    { name: "Pipeline Screening Layer", timeline: "Month 5-7", status: "proposed" },
+    { name: "Ecosystem Tracker & Matching", timeline: "Month 7-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["Portfolio Analytics", "NLP", "Recommendation Systems", "Impact Measurement"]} />
+
+<SourceList
+  sources={[
+    { title: "Fast Forward 2024 Impact Report", url: "https://www.ffwd.org/impact-report" },
+    { title: "2025 Accelerator Cohort Announcement", url: "https://www.prweb.com/releases/fast-forward-reveals-2025-accelerator-cohort-with-a-focus-on-ai-powered-nonprofits-302393845.html" },
+    { title: "Nonprofits Using AI Need Funding to Scale (Philanthropy News Digest)", url: "https://philanthropynewsdigest.org/news/nonprofits-using-ai-need-funding-to-scale-new-tech-report-finds" },
+    { title: "Fast Forward AI for Humanity Report 2025", url: "https://www.ffwd.org/2025-ai-for-humanity-report" }
+  ]}
+/>

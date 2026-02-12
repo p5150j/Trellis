@@ -1,0 +1,118 @@
+---
+title: "Press Freedom Intelligence Infrastructure"
+partner: "Reporters Without Borders"
+stage: "proposal"
+description: "Automated violation monitoring, Press Freedom Index pipeline acceleration, and JTI certification tooling for the world's leading press freedom organization"
+tags: ["NLP", "Classification", "Data Pipeline", "Media Freedom"]
+score: 86.2
+website: "https://rsf.org"
+founded: "1985"
+location: "Paris, France"
+headcount: "57"
+funding: "Public subsidies and institutional grants"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+Reporters Without Borders (RSF) is the global authority on press freedom. They produce the Press Freedom Index — the definitive annual ranking of 180 countries — maintain a real-time Barometer tracking every journalist killed, detained, or disappeared worldwide, run the Journalism Trust Initiative (JTI) certification standard, and operate Collateral Freedom to mirror censored news sites past government firewalls. In 2024 alone, they provided direct support to over 700 journalists across 76 countries and allocated 70% of emergency funds to resettling exiled reporters.
+
+But RSF's core data workflows are still manual. The Press Freedom Index relies on expert questionnaires scored by hand. The Barometer is updated through human monitoring of news sources in dozens of languages. JTI certification involves manual compliance review against 130+ indicators. These are exactly the kinds of structured-but-labor-intensive processes where ML can multiply a small team's output without replacing their judgment.
+
+<OrgProfile
+  partner="Reporters Without Borders"
+  website="https://rsf.org"
+  founded="1985"
+  location="Paris, France"
+  headcount="57"
+  funding="Public subsidies and institutional grants"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 4,
+    tech_gap: 4,
+    impact: 5,
+    size: 5,
+    viability: 5,
+    growth: 3
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Countries Ranked", value: "180" },
+    { label: "Journalists Supported", value: "700+" },
+    { label: "Fit Score", value: "86.2" }
+  ]}
+/>
+
+## The Problem Today
+
+RSF runs several data-intensive programs that each have their own manual bottlenecks:
+
+**Press Freedom Index.** Every year, RSF sends questionnaires to press freedom experts, journalists, researchers, and legal specialists across 180 countries. Responses are scored across five indicators — political context, legal framework, economic context, sociocultural context, and safety — then aggregated into country scores. The process is rigorous but slow. Questionnaire data comes in multiple languages, scoring requires human judgment to normalize across wildly different contexts, and the analysis team is small relative to the scope. The Index publishes annually, but press freedom conditions change weekly.
+
+**RSF Barometer.** The real-time tracker of press freedom violations — journalists killed, detained, held hostage, or disappeared — is updated through manual monitoring of news sources, partner reports, and direct contact with journalists and their families. Staff monitor media in French, English, Spanish, Portuguese, Arabic, and Farsi at minimum. As of early 2026, they're tracking 24 journalists killed and 537 detained. Every one of those data points was manually verified.
+
+**Journalism Trust Initiative (JTI).** RSF's machine-readable trust certification standard (CWA 17493) evaluates news outlets against 130+ indicators covering editorial independence, transparency, and correction practices. Certification review is manual. As more outlets apply, the review pipeline becomes the bottleneck.
+
+**Collateral Freedom.** RSF mirrors censored news websites onto major cloud platforms (AWS, Azure, Google Cloud) that authoritarian governments can't easily block without disrupting their own economies. Deciding which sites to mirror, monitoring which mirrors are being blocked, and rotating infrastructure requires ongoing manual attention.
+
+<BeforeAfter
+  before={[
+    "Press Freedom Index scored manually from multilingual questionnaires, published annually",
+    "Barometer violations tracked through manual media monitoring in 6+ languages",
+    "JTI certification reviews done by hand against 130+ compliance indicators"
+  ]}
+  after={[
+    "NLP-assisted questionnaire processing with continuous supplemental scoring between annual releases",
+    "Automated multilingual media monitoring feeding verified violation alerts to Barometer team",
+    "Semi-automated JTI compliance screening that flags gaps before human review"
+  ]}
+/>
+
+## What We'd Build
+
+### Barometer Violation Detection Pipeline
+
+The highest-impact, fastest-to-deliver build. RSF staff currently monitor news sources manually across multiple languages to identify when journalists are killed, arrested, detained, or disappeared. An NLP pipeline would ingest RSS feeds, news APIs, social media streams, and wire services in RSF's core languages (French, English, Spanish, Portuguese, Arabic, Farsi), classify articles mentioning press freedom violations, extract structured data (who, where, what happened, source credibility), and surface candidate incidents for human verification. This doesn't replace RSF's rigorous fact-checking — it replaces the hours of manual scanning that precede it. The team verifies faster because the pipeline brings relevant reports to them instead of requiring them to find every report themselves.
+
+### Press Freedom Index Pipeline Acceleration
+
+The Index questionnaire process generates a large volume of multilingual free-text responses that need to be normalized and scored. An NLP-assisted pipeline would help in three ways: (1) automated translation and standardization of questionnaire responses, (2) sentiment and topic extraction to help analysts quickly identify which indicators are shifting and why, and (3) continuous supplemental scoring between annual releases using the same media monitoring data that feeds the Barometer. The goal isn't to automate the Index — its credibility comes from expert human judgment — but to give analysts better-processed inputs and more frequent signal about where conditions are changing fastest.
+
+### JTI Compliance Screening Tool
+
+The Journalism Trust Initiative standard has 130+ indicators. When a news outlet applies for certification, reviewers currently check each indicator manually — editorial policies, correction practices, ownership transparency, funding disclosure, and more. A screening tool would pre-populate compliance checks by automatically scanning the applicant's website for published policies, correction pages, masthead/ownership disclosures, and funding statements. It would flag which indicators appear satisfied, which are missing, and which need human judgment. This accelerates review without compromising rigor, and lets RSF scale JTI certification to more outlets.
+
+### Collateral Freedom Mirror Monitoring
+
+A lightweight monitoring system that tracks the availability of RSF's mirrored websites across different countries, detects when mirrors are being blocked or throttled, and alerts the operations team to rotate infrastructure. This could integrate with existing internet measurement tools like OONI (Open Observatory of Network Interference) data to provide a broader picture of censorship patterns affecting RSF's mirror network.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Barometer Violation Detection Pipeline", timeline: "Month 1-3", status: "proposed" },
+    { name: "Press Freedom Index Pipeline Tools", timeline: "Month 3-6", status: "proposed" },
+    { name: "JTI Compliance Screening Tool", timeline: "Month 6-8", status: "proposed" },
+    { name: "Collateral Freedom Monitor", timeline: "Month 8-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["NLP", "Classification", "Data Pipeline", "Media Freedom", "Multilingual"]} />
+
+<SourceList
+  sources={[
+    { title: "RSF 2024 Activity Report", url: "https://rsf.org/sites/default/files/medias/file/2025/05/2024%20RSF%20Activity%20Report.pdf" },
+    { title: "RSF 2025 Priority Campaigns", url: "https://rsf.org/en/rsf-rolls-out-priority-campaigns-2025-tackling-current-threats-press-freedom-and-right-reliable" },
+    { title: "RSF 2024 Financial Report", url: "https://rsf.org/sites/default/files/medias/file/2025/07/RSF%20-%20Rapport%20CAC%20%28ENG%29%20-%2003-06-25.pdf" },
+    { title: "RSF 2024 Assistance Report", url: "https://rsf.org/sites/default/files/medias/file/2025/01/BILAN%20ASSISTANCE%202024_EN_0.pdf" },
+    { title: "RSF Press Freedom Index", url: "https://rsf.org/en/index" },
+    { title: "Journalism Trust Initiative (JTI)", url: "https://www.journalismtrustinitiative.org" }
+  ]}
+/>

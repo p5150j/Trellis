@@ -1,0 +1,130 @@
+---
+title: "AI Infrastructure for Policy Research & Impact"
+partner: "Foundation for American Innovation"
+stage: "proposal"
+description: "Research intelligence engine, testimony preparation tools, and policy signal monitoring for a fast-growing tech policy institution publishing 300+ papers a year"
+tags: ["NLP", "Knowledge Graphs", "Policy Intelligence", "Research Automation"]
+score: 90.0
+website: "https://thefai.org"
+founded: "2014"
+location: "San Francisco, CA & Washington, DC"
+headcount: "30-60"
+funding: "Foundation and industry funded"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+The Foundation for American Innovation is a three-part institution — Research, Labs, and Network — that published over 300 pieces of policy research in 2025 alone, testified before Congress on topics from semiconductor export controls to AI governance, launched the Conservative AI Policy Fellowship to train the next generation of tech policymakers, and co-issued the Techno-Industrial Policy Playbook with the Institute for Progress and American Compass. Its senior fellow Dean Ball is one of the most-cited voices on AI policy in Washington. FAI grew rapidly in revenue and headcount through 2025, attracting over 150 donors — 56% foundations, 31% industry and venture capital, 13% individuals — and hosting the American Innovation Gala with 45+ sponsors from AI labs, energy companies, and VC firms. FAI already understands AI better than almost any policy shop in America. What it doesn't have is the AI infrastructure to multiply its own research output and demonstrate its policy influence at scale.
+
+<OrgProfile
+  partner="Foundation for American Innovation"
+  website="https://thefai.org"
+  founded="2014"
+  location="San Francisco, CA & Washington, DC"
+  headcount="30-60"
+  funding="Foundation and industry funded"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 4,
+    size: 4,
+    viability: 5,
+    growth: 5
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "Research Published", value: "300+" },
+    { label: "Congressional Testimonies", value: "6+" },
+    { label: "Fit Score", value: "90.0" }
+  ]}
+/>
+
+## The Problem Today
+
+FAI's policy team operates across six program areas — AI, Technology & Telecom, Governance, Energy & Infrastructure, Science & Defense, and National Security — each producing research papers, Congressional testimony, policy briefs, and op-eds on tight legislative timelines. When a scholar needs to prepare for a Senate hearing on AI export controls, the work starts with manually searching FAI's own website and publication archives to find every prior position the organization has taken on the topic. There's no structured way to query "what has FAI said about compute thresholds?" or "which of our papers touch semiconductor supply chains?" across all 300+ publications, testimonies, and media appearances.
+
+This is the classic think tank bottleneck: institutional knowledge lives in individual researchers' heads and scattered across PDFs, blog posts, and testimony transcripts on thefai.org. Each program area produces excellent work in its own lane, but there's no cross-linking between them. A National Security paper on export controls may be deeply relevant to an AI program analysis of compute governance — but nobody surfaces that connection unless a researcher happens to remember both pieces. With six programs publishing at FAI's pace, these missed connections compound.
+
+Meanwhile, FAI's Labs division builds data products — school choice tools, education spending trackers — that demonstrate the org's "builders, hackers, and founders" ethos. But these products are database-driven, not intelligence-driven. They serve data without surfacing patterns, anomalies, or recommendations. The same gap exists in FAI's donor reporting: with 150+ donors and rapid revenue growth, quantifying which publications drove which policy outcomes is still anecdotal, not systematic.
+
+The irony is sharp. FAI's researchers literally write America's AI policy. They shape compute governance frameworks, AI safety standards, and export control regimes. But their own research workflow runs on manual search, individual memory, and disconnected publication archives.
+
+<BeforeAfter
+  before={[
+    "300+ publications searched manually via website for testimony and briefing prep",
+    "Six policy programs producing research in silos — no cross-linking or semantic search",
+    "Policy influence tracked anecdotally, not systematically, for 150+ donors"
+  ]}
+  after={[
+    "Semantic search across entire research corpus, linked to live legislation and regulatory filings",
+    "Knowledge graph connecting publications, testimony, and policy outcomes across all six programs",
+    "Automated impact attribution tying FAI research to legislative and regulatory outcomes"
+  ]}
+/>
+
+## What We'd Build
+
+### Research Intelligence Engine
+
+The centerpiece. A semantic search layer and knowledge graph connecting FAI's 300+ publications, Congressional testimonies, op-eds, and policy briefs into a queryable intelligence system. When a new AI bill drops in committee, the system instantly surfaces every relevant FAI paper, testimony, and published position — across all six program areas. When a scholar prepares export control testimony, the system pulls every prior FAI position on semiconductors, China competition, and Bureau of Industry and Security funding into a single briefing view.
+
+The system would ingest and connect:
+- **FAI research corpus**: All published papers, briefs, and commentary from thefai.org
+- **Congressional testimony**: Prior FAI submissions across appropriations and policy hearings
+- **Legislative databases**: Federal and state bill tracking via Congress.gov and LegiScan APIs, committee schedules, amendment histories
+- **Regulatory filings**: Federal Register entries, agency guidance documents, executive orders via the Federal Register API
+- **Media output**: Op-eds, event transcripts, and published commentary across external outlets
+
+The technical approach: embed all FAI publications using a retrieval-augmented generation (RAG) architecture, build entity and topic graphs linking people, organizations, legislation, and policy positions, and connect to live legislative data feeds. This isn't a chatbot — it's a structured intelligence layer that makes FAI's institutional knowledge queryable and connected to the policy landscape in real time.
+
+### Testimony & Briefing Preparation Tools
+
+FAI scholars testified before Congress six times in 2023, and the pace has only increased through 2025 as the org expanded into energy, infrastructure, and national security policy. Each testimony requires compiling relevant prior FAI research, aligning with existing organizational positions, identifying supporting data points, and anticipating counterarguments from other witnesses and committee members.
+
+An AI-assisted preparation workflow that: auto-compiles relevant FAI publications by topic and subtopic, generates structured briefing documents grounded in existing positions, surfaces supporting data and citations from the research corpus, flags where FAI's position has evolved over time, and identifies likely counterarguments by analyzing opposing testimony and publications from other think tanks. The goal is institutional memory — ensuring every testimony builds on everything FAI has ever published, not just what the individual scholar remembers.
+
+This also helps the Conservative AI Policy Fellowship. Fellows coming into the program could query the system to quickly get up to speed on FAI's positions across AI safety, U.S.-China competition, privacy, copyright, and workforce issues — topics the fellowship explicitly covers.
+
+### Policy Signal Monitor
+
+Real-time intelligence pipeline tracking legislative databases, committee schedules, regulatory filings, and media coverage across FAI's six program areas. When a state introduces permitting reform legislation that aligns with FAI recommendations, when a Congressional committee schedules a hearing on AI governance, or when a new export control rule appears in the Federal Register — the system alerts the relevant program team with context from FAI's existing research.
+
+The data sources are well-structured and API-accessible: Congress.gov for federal bills and hearings, LegiScan for state-level tracking, the Federal Register API for regulatory filings, and media monitoring via RSS and news APIs. The ML layer sits on top: classifying each signal against FAI's six program areas, matching it against existing FAI publications and positions, and scoring relevance. This isn't generic legislative tracking from a GovTrack subscription — it's calibrated to FAI's specific research agenda and policy positions, so alerts arrive pre-connected to the organization's prior work.
+
+### Impact Attribution Dashboard
+
+With 150+ donors and rapid organizational growth, FAI needs to demonstrate policy influence with the same rigor it brings to policy research. An analytics platform tracking the research-to-policy pipeline: which FAI publications are cited in legislation, testimony by other organizations, media coverage, and agency guidance. When FAI's energy and permitting research shows up in a state bill or an executive order, the system captures that connection automatically.
+
+The platform would aggregate: citation tracking across Congressional records and regulatory filings, media mention analysis linking FAI publications to coverage in major outlets, testimony influence mapping (when other witnesses cite or respond to FAI positions), and policy adoption timelines showing the arc from FAI research to legislative or regulatory action. This turns "we shaped AI policy" from an anecdotal claim into a data-backed narrative — exactly what foundation and industry donors want to see when they're evaluating a 56% foundation-funded organization.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Research Intelligence Engine", timeline: "Month 1-4", status: "proposed" },
+    { name: "Testimony & Briefing Tools", timeline: "Month 3-6", status: "proposed" },
+    { name: "Policy Signal Monitor", timeline: "Month 5-8", status: "proposed" },
+    { name: "Impact Attribution Dashboard", timeline: "Month 7-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["NLP", "Knowledge Graphs", "Policy Intelligence", "Research Automation", "Legislative Analytics"]} />
+
+<SourceList
+  sources={[
+    { title: "Quarterly Update Q4 2025 — Foundation for American Innovation", url: "https://www.thefai.org/posts/quarterly-update-q4-2025" },
+    { title: "Quarterly Update Q1 2025 — Foundation for American Innovation", url: "https://www.thefai.org/posts/quarterly-update-q1-2025" },
+    { title: "Foundation for American Innovation on LinkedIn", url: "https://www.linkedin.com/company/americaninnovation" },
+    { title: "FAI on Instrumentl — Grants Profile", url: "https://www.instrumentl.com/990-report/foundation-for-american-innovation" },
+    { title: "Survival and Flourishing Fund — 2025 Grants", url: "https://survivalandflourishing.fund/sff-2025-h1-recommendations" }
+  ]}
+/>

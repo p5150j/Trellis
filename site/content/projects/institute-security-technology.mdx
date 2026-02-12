@@ -1,0 +1,108 @@
+---
+title: "Security Policy Intelligence"
+partner: "Institute for Security and Technology"
+stage: "proposal"
+description: "Policy recommendation tracking, ransomware incident analysis, and threat report synthesis for the leading security policy convener"
+tags: ["NLP", "Policy Analytics", "Data Pipelines", "Cybersecurity"]
+score: 78.8
+website: "https://securityandtechnology.org"
+founded: "2015"
+location: "San Francisco, CA"
+headcount: "25-40"
+funding: "Foundation funded"
+date: "2025-02-10"
+featured: false
+---
+
+## The Opportunity
+
+The Institute for Security and Technology sits at the intersection where technology companies, government, and civil society come together on security challenges. Their flagship — the Ransomware Task Force — convened 60+ experts from DOJ, FBI, CISA, Microsoft, CrowdStrike, and Mandiant to produce 48 specific policy recommendations that have shaped national ransomware response. Their convening model works: get the right people in the room, build consensus on actionable recommendations, then track adoption. With $4.56M in 2024 revenue, $3.2M from Craig Newmark Philanthropies for their UnDisruptable27 initiative, and programs spanning AI governance and critical infrastructure security, IST has the relationships and credibility to influence policy at the highest levels. What they lack is the data infrastructure to move from manual policy tracking to systematic, evidence-driven analysis.
+
+<OrgProfile
+  partner="Institute for Security and Technology"
+  website="https://securityandtechnology.org"
+  founded="2015"
+  location="San Francisco, CA"
+  headcount="25-40"
+  funding="Foundation funded"
+/>
+
+<StageBadge stage="proposal" />
+
+<ScoreRadar
+  scores={{
+    ai_ml: 5,
+    tech_gap: 4,
+    impact: 3,
+    size: 3,
+    viability: 4,
+    growth: 4
+  }}
+/>
+
+<MetricRow
+  metrics={[
+    { label: "2024 Revenue", value: "$4.56M" },
+    { label: "RTF Recommendations", value: "48" },
+    { label: "Fit Score", value: "78.8" }
+  ]}
+/>
+
+## The Problem Today
+
+IST's Ransomware Task Force published 48 policy recommendations in 2021 and tracks their adoption through annual progress reports. That tracking is entirely manual — researchers read through legislation, executive orders, regulatory filings, and agency announcements across federal, 50-state, and international jurisdictions to determine which recommendations have been adopted, which are in progress, and which remain unaddressed. For each annual progress report, this means months of a policy analyst's time scanning documents.
+
+The same bottleneck hits their research workflow. Before each task force cycle, IST researchers must digest hundreds of vendor threat reports (Microsoft Digital Defense Report, Verizon DBIR, CrowdStrike annual reports), government advisories (CISA alerts, IC3 reports), and academic papers to ground their work. There are no automated tools for ingesting, classifying, or synthesizing this material — it's all manual reading and note-taking. IST's 25-40 person team is entirely policy researchers, program managers, and government affairs specialists. Zero engineers, zero data scientists, zero custom software.
+
+<BeforeAfter
+  before={[
+    "RTF recommendation tracking done manually across 50-state + federal + international jurisdictions",
+    "Hundreds of vendor threat reports and government advisories read and synthesized by hand each cycle",
+    "No systematic data on ransomware incident trends — relying on third-party summaries"
+  ]}
+  after={[
+    "NLP-powered policy tracker automatically detecting recommendation adoption across jurisdictions",
+    "Automated ingestion and synthesis of threat reports, advisories, and academic papers",
+    "Proprietary ransomware incident corpus with trend analysis grounding policy recommendations in data"
+  ]}
+/>
+
+## What We'd Build
+
+### Policy Recommendation Tracker
+
+The highest-impact build for IST's core workflow. An NLP pipeline that monitors legislation, executive orders, regulatory actions, and agency announcements across all 50 states, federal government, EU, UK, and key international bodies to automatically detect when IST's 48 RTF recommendations (and future task force recommendations) are being adopted. The system classifies each policy action against the specific recommendation it maps to, tracks adoption status (proposed, in progress, enacted, implemented), and generates progress dashboards that directly feed IST's annual reports. This compresses months of manual policy tracking into a continuously updated monitoring system.
+
+The pipeline would ingest:
+- **Federal**: Congressional legislation (congress.gov), executive orders, CISA directives, DOJ announcements
+- **State**: Legislative tracking across 50 states (via LegiScan or similar APIs)
+- **International**: EU Digital legislation, UK NCSC publications, INTERPOL and Europol policy updates
+- **Regulatory**: FTC enforcement actions, SEC cyber disclosure rules, sector-specific regulations
+
+### Ransomware Incident Corpus & Trend Analyzer
+
+IST's policy recommendations are strongest when backed by data, but they currently rely on third-party summaries of incident trends. This build creates IST's own incident corpus — automated ingestion of ransomware incident reports from FBI IC3 complaint data, CISA advisories, news sources, and vendor disclosures. NLP entity extraction captures: target sector, attack vector, ransom amount, payment status, recovery timeline, and attribution indicators. Trend analysis reveals patterns: which sectors are increasingly targeted, whether average ransom amounts are rising or falling, whether specific policy interventions correlate with incident declines. This gives IST proprietary analytical capability that differentiates their work from other think tanks and grounds recommendations in systematic evidence.
+
+### Threat Report Synthesis Engine
+
+Before each task force convening, IST researchers manually read hundreds of pages of threat intelligence — Microsoft Digital Defense Report, Verizon DBIR, CrowdStrike Global Threat Report, Mandiant M-Trends, plus CISA alerts and academic papers. An automated synthesis pipeline ingests these documents, extracts key findings and threat indicators, clusters themes across reports, and generates structured briefing summaries. Researchers get a pre-digested view of the threat landscape with citations, freeing them to focus on analysis and recommendation development rather than raw information processing.
+
+## Build Phases
+
+<BuildPhases
+  phases={[
+    { name: "Policy Recommendation Tracker", timeline: "Month 1-4", status: "proposed" },
+    { name: "Ransomware Incident Corpus", timeline: "Month 4-7", status: "proposed" },
+    { name: "Threat Report Synthesis", timeline: "Month 7-10", status: "proposed" }
+  ]}
+/>
+
+<TagList tags={["NLP", "Policy Analytics", "Data Pipelines", "Cybersecurity", "Threat Intelligence"]} />
+
+<SourceList
+  sources={[
+    { title: "IST 2024 Annual Report", url: "https://securityandtechnology.org/wp-content/uploads/2025/11/Institute-for-Security-and-Technology-2024-Annual-Report.pdf" },
+    { title: "Ransomware Task Force", url: "https://securityandtechnology.org/ransomware-task-force/" },
+    { title: "IST Programs", url: "https://securityandtechnology.org" }
+  ]}
+/>
